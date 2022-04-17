@@ -5,6 +5,7 @@
 #include <iostream>
 #include "PositionBasedDynamics/PositionBasedDynamics.h"
 #include "Utils/Timing.h"
+#include "ForceController.h"
 
 using namespace PBD;
 using namespace std;
@@ -85,6 +86,8 @@ void TimeStepController::step(SimulationModel &model)
 	SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
 	ParticleData &pd = model.getParticles();
 	OrientationData &od = model.getOrientations();
+
+	ForceController::setExternalForceAcceleration(model);
 
 	const int numBodies = (int)rb.size();
 

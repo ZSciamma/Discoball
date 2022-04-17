@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libUtils.a CMakeFiles/Utils.dir/IndexedFaceMesh.cpp.o CMakeFiles/Utils.dir/IndexedTetMesh.cpp.o CMakeFiles/Utils.dir/SceneLoader.cpp.o CMakeFiles/Utils.dir/TetGenLoader.cpp.o CMakeFiles/Utils.dir/VolumeIntegration.cpp.o
+/usr/bin/ranlib ../../lib/libUtils.a

@@ -7,6 +7,7 @@ set(PBD_DEMOS
 	CosseratRodsDemo
 	CouplingDemos
 	DistanceFieldDemos
+	ExternalForceDemo
 	FluidDemo
 	GenericConstraintsDemos
 	PositionBasedElasticRodsDemo

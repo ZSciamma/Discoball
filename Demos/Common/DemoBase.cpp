@@ -894,6 +894,19 @@ void DemoBase::selection(const Vector2i &start, const Vector2i &end, void *clien
 		MiniGL::setMouseMoveFunc(-1, NULL);
 
 	MiniGL::unproject(end[0], end[1], base->m_oldMousePos);
+
+	/*
+	// *** DEBUG:
+	// *** Print out indices of the selected objects
+	if (base->m_selectedBodies.size() > 0) {
+		cout << "Listing selected bodies:" << endl;
+		for (int body : base->m_selectedBodies) {
+			cout << "Selected body: " << body << endl;
+		}
+		cout << "Done listing." << endl;
+	}
+	// ***
+	*/
 }
 
 void DemoBase::reset()
