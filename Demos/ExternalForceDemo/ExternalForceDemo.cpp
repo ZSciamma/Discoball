@@ -35,6 +35,7 @@ using namespace Utilities;
 
 void timeStep ();
 void buildModel ();
+void createMeshes();
 void readScene(const bool readFile);
 void render ();
 void reset();
@@ -267,6 +268,27 @@ void buildModel ()
 	readScene(true);
 }
 
+void createMeshes()
+{
+
+	int width = 5;
+	int height = 10;
+	int depth = 5;
+	SimulationModel* model = Simulation::getCurrent()->getModel();
+	model->addRegularTetModel(width, height, depth,
+		Vector3r(-5, 6, 0), Matrix3r::Identity(), Vector3r(10.0, 1.5, 1.5));
+
+	//model->addRegularTetModel(width, height, depth,
+	//	Vector3r(-5, 5, 0), Matrix3r::Identity(), Vector3r(10.0, 1.5, 1.5));
+
+	/*
+	SimulationModel* model = Simulation::getCurrent()->getModel();
+	model->addRegularTetModel(30, 5, 5,
+		Vector3r(5, 0, 0), Matrix3r::Identity(), Vector3r(10.0, 1.5, 1.5));
+	*/
+}
+
+
 void initTriangleModelConstraints()
 {
 	// init constraints
@@ -286,8 +308,13 @@ void initTriangleModelConstraints()
 	}
 }
 
+// Enable the constraints for every tet model created
+//	These constraints bond the neighbouring particles in a model together
+//	So without this, a model's particles might spread out all over the place
 void initTetModelConstraints()
 {
+	cout << "Number of tets: " << Simulation::getCurrent()->getModel()->getTetModels().size() << endl;
+
 	// init constraints
 	SimulationModel *model = Simulation::getCurrent()->getModel();
 	solidStiffness = 1.0;
@@ -302,6 +329,8 @@ void initTetModelConstraints()
 		model->addSolidConstraints(model->getTetModels()[cm], solidSimulationMethod, solidStiffness,
 			solidPoissonRatio, volumeStiffness, solidNormalizeStretch, solidNormalizeShear);
 	}
+
+	cout << "Simulation has " << model->getTetModels().size() << " tet models." << endl;
 }
 
 void loadObj(const std::string &filename, VertexData &vd, IndexedFaceMesh &mesh, const Vector3r &scale)
@@ -618,7 +647,7 @@ void readScene(const bool readFile)
 		}
 		if (distanceFields.find(sdfKey) == distanceFields.end())
 		{
-			// Generate SDF
+			// Generate SDF (signed distance field)
 			if (tmd.m_collisionObjectType == SceneLoader::SDF)
 			{
 				VertexData &vd = objFiles[tmd.m_modelFileVis].first;
@@ -827,6 +856,10 @@ void readScene(const bool readFile)
 		}
 
 		// read visualization mesh
+		// Used to create a slightly nice visualization - i.e. doesn't affect the physics
+		// So the armadillo vis file is a slightly more detailed model that looks much nicer
+		//	while being close enough to the geometry file to keep the physics realistic
+		/*
 		if (tmd.m_modelFileVis != "")
 		{ 
 			if (objFiles.find(tmd.m_modelFileVis) != objFiles.end())
@@ -844,12 +877,27 @@ void readScene(const bool readFile)
 				tm->updateVisMesh(pd);
 			}
 		}
-
+		//*/
+		
 		tm->setRestitutionCoeff(tmd.m_restitutionCoeff);
 		tm->setFrictionCoeff(tmd.m_frictionCoeff);
 
 		tm->updateMeshNormals(pd);
 	}
+
+	/*
+	cout << "Creating cube wall" << endl;
+	
+	createMeshes();
+	TetModel *tm = tetModels[tetModels.size() - 1];
+	unsigned int offset = tm->getIndexOffset();
+
+	ParticleData &pd = model->getParticles();
+	pd.setMass(offset + 2, 0.0);
+	tm->setRestitutionCoeff(0.3);
+	tm->setFrictionCoeff(0.3);
+	tm->updateMeshNormals(pd);
+	*/
 
 	initTetModelConstraints();
 
@@ -1354,3 +1402,19 @@ void TW_CALL setSolidNormalizeShear(const void* value, void* clientData)
 	solidNormalizeShear = *(const Real*)(value);
 	((SimulationModel*)clientData)->setConstraintValue<StrainTetConstraint, bool, &StrainTetConstraint::m_normalizeShear>(solidNormalizeShear);
 }
+
+/* Attempt to add TriangleModel in JSON file. It weirdly spins faster and faster:
+	"TriangleModels": [
+		{
+			"id": 1,
+			"geometryFile": "../models/cube.obj",
+			"translation": [-5,6,0],
+			"rotationAxis": [0, 0, 1],
+			"rotationAngle": 0.1,
+			"scale": [2,2,2],
+			"staticParticles": [],
+			"restitution" : 0.0,
+			"friction" : 0.3
+		}
+	],
+*/

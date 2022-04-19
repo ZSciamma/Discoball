@@ -895,7 +895,7 @@ void DemoBase::selection(const Vector2i &start, const Vector2i &end, void *clien
 
 	MiniGL::unproject(end[0], end[1], base->m_oldMousePos);
 
-	/*
+	
 	// *** DEBUG:
 	// *** Print out indices of the selected objects
 	if (base->m_selectedBodies.size() > 0) {
@@ -905,8 +905,15 @@ void DemoBase::selection(const Vector2i &start, const Vector2i &end, void *clien
 		}
 		cout << "Done listing." << endl;
 	}
+	if (base->m_selectedParticles.size() > 0) {
+		cout << "Listing selected bodies:" << endl;
+		for (int particle : base->m_selectedParticles) {
+			cout << "Selected body: " << particle << endl;
+		}
+		cout << "Done listing." << endl;
+	}
 	// ***
-	*/
+	
 }
 
 void DemoBase::reset()

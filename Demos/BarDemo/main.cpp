@@ -156,6 +156,10 @@ void createMesh()
 		Vector3r(5, 0, 0), Matrix3r::Identity(), Vector3r(10.0, 1.5, 1.5));
 
 	ParticleData& pd = model->getParticles();
+
+	// Make the right end gradually heavier than the left end
+	//	The left end of the cuboid has no mass, so it stays fixed
+	//	Without this, the cuboid would just fall like a normal shape
 	for (unsigned int i = 0; i < 1; i++)
 	{
 		for (unsigned int j = 0; j < height; j++)

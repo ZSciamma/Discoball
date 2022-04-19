@@ -687,6 +687,8 @@ void SimulationModel::addTetModel(
 	tetModel->initMesh(nPoints, nTets, startIndex, indices);
 }
 
+// Creates a regular cuboid tet model
+// 	Creates the points and indices for the cuboid, then calls addTetModel
 void SimulationModel::addRegularTetModel(const int width, const int height, const int depth,
 	const Vector3r& translation,
 	const Matrix3r& rotation,
@@ -771,6 +773,7 @@ void SimulationModel::addRegularTetModel(const int width, const int height, cons
 	{
 		pd.setMass(i, 1.0);
 	}
+	//pd.setMass(offset, 0.0); // Fix top left corner
 }
 
 void SimulationModel::addLineModel(
