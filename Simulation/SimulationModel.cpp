@@ -669,6 +669,9 @@ void SimulationModel::addRegularTriangleModel(const int width, const int height,
 		pd.setMass(i, 1.0);
 }
 
+// Add tet model, creating a particle for every vertex, and a mesh
+// 	points is the location of each vertex
+//	indices is the list of tets (each tet connects 4 vertices from the pointsl ist)
 void SimulationModel::addTetModel(
 	const unsigned int nPoints,
 	const unsigned int nTets,

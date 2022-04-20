@@ -819,6 +819,7 @@ void readScene(const bool readFile)
 	//////////////////////////////////////////////////////////////////////////
 
 	// Load all tet models from their ELE and NODE files
+	// Extract lists of vertices and tets for each model and save them for later
 	// map file names to loaded geometry to prevent multiple imports of same files
 	std::map<pair<string, string>, pair<vector<Vector3r>, vector<unsigned int>>> tetFiles;
 	for (unsigned int i = 0; i < data.m_tetModelData.size(); i++)
@@ -837,10 +838,13 @@ void readScene(const bool readFile)
 		}
 	}
 
+	// For each tet model, finally add its ELE/NODE data to the SimulationModel,
+	//	then give it the higher-quality visualization specified by its OBJ file
 	tetModels.reserve(data.m_tetModelData.size());
 	std::map<unsigned int, unsigned int> tm_id_index2;
 	for (unsigned int i = 0; i < data.m_tetModelData.size(); i++)
 	{
+		// Fetch lists of vertices and tets (which we extracted from ele and node files) for this model
 		const SceneLoader::TetModelData &tmd = data.m_tetModelData[i];
 
 		pair<string, string> fileNames = { tmd.m_modelFileNodes, tmd.m_modelFileElements };
@@ -853,22 +857,29 @@ void readScene(const bool readFile)
 		vector<Vector3r> vertices = geo->second.first;
 		vector<unsigned int> &tets = geo->second.second;
 
+		// Scale, rotate, and translate every vertex according to user parameters
 		const Matrix3r R = tmd.m_q.matrix();
 		for (unsigned int j = 0; j < vertices.size(); j++)
 		{
 			vertices[j] = R * (vertices[j].cwiseProduct(tmd.m_scale)) + tmd.m_x;
 		}
 
+		// Finally add tet to the SimulationModel which contains every shape
+		// This adds all the particles and the mesh for this tet to the SimulationModel
 		model->addTetModel((unsigned int)vertices.size(), (unsigned int)tets.size() / 4, vertices.data(), tets.data());
 
 		TetModel *tm = tetModels[tetModels.size() - 1];
 		ParticleData &pd = model->getParticles();
 		unsigned int offset = tm->getIndexOffset();
 
+		// Tell TetModel initial translation,rotation, and scale
+		//	I don't think this does anything apart from inform the model
+		//	We already put these parameters into effect earlier by manipulating the vertices
 		tm->setInitialX(tmd.m_x);
 		tm->setInitialR(R);
 		tm->setInitialScale(tmd.m_scale);
 	
+		// Give mass 0 to any vertices the user wants static - a particle with 0 mass can't move
 		for (unsigned int j = 0; j < tmd.m_staticParticles.size(); j++)
 		{
 			const unsigned int index = tmd.m_staticParticles[j] + offset;
@@ -876,22 +887,28 @@ void readScene(const bool readFile)
 		}
 
 		// read visualization mesh
-		// Used to create a slightly nice visualization - i.e. doesn't affect the physics
+		// Used to create a slightly nicer visualization - i.e. doesn't affect the physics
 		// So the armadillo vis file is a slightly more detailed model that looks much nicer
 		//	while being close enough to the geometry file to keep the physics realistic
 		//*
 		if (tmd.m_modelFileVis != "")
 		{ 
 			if (objFiles.find(tmd.m_modelFileVis) != objFiles.end())
-			{
+			{	
+				// Tell TetModel, which up till now had no knowledge of the OBJ file,
+				//	to use the vertices and mesh extracted from the OBJ for visualization.
+				//	Up till now the TetModel only new about the info in the ELE and NODE files,
+				//	which are lower quality for the physics to work well.
 				IndexedFaceMesh &visMesh = tm->getVisMesh();
 				VertexData &vdVis = tm->getVisVertices();
 				vdVis = objFiles[tmd.m_modelFileVis].first;
 				visMesh = objFiles[tmd.m_modelFileVis].second;
 
+				// As earlier with ELE/NODE vertices, scale, rotate and translate the OBJ vertices
 				for (unsigned int j = 0; j < vdVis.size(); j++)
 					vdVis.getPosition(j) = R * (vdVis.getPosition(j).cwiseProduct(tmd.m_scale)) + tmd.m_x;
 
+				// The order of these three calls is specified by TetModel.h
 				tm->updateMeshNormals(pd);
 				tm->attachVisMesh(pd);
 				tm->updateVisMesh(pd);
@@ -899,6 +916,7 @@ void readScene(const bool readFile)
 		}
 		//*/
 		
+		// Set object's basic physics properties
 		tm->setRestitutionCoeff(tmd.m_restitutionCoeff);
 		tm->setFrictionCoeff(tmd.m_frictionCoeff);
 
@@ -918,6 +936,7 @@ void readScene(const bool readFile)
 	tm->setFrictionCoeff(0.3);
 	tm->updateMeshNormals(pd);
 	*/
+
 
 	initTetModelConstraints();
 

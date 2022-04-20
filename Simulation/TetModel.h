@@ -66,6 +66,8 @@ namespace PBD
 			const ParticleMesh& getParticleMesh() const { return m_particleMesh; }
 			void cleanupModel();
 
+			// Get index in the list of all particles (ParticleData) at which
+			//	this model's particles start (I think)
 			unsigned int getIndexOffset() const;
 
 			void initMesh(const unsigned int nPoints, const unsigned int nTets, const unsigned int indexOffset, unsigned int* indices);
