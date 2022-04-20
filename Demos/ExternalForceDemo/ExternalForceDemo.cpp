@@ -333,8 +333,10 @@ void initTetModelConstraints()
 	cout << "Simulation has " << model->getTetModels().size() << " tet models." << endl;
 }
 
+// Loads a model from an object file
 void loadObj(const std::string &filename, VertexData &vd, IndexedFaceMesh &mesh, const Vector3r &scale)
 {
+	// Extract model points, faces, normals, and texcoords from OBJ file (using scale)
 	std::vector<OBJLoader::Vec3f> x;
 	std::vector<OBJLoader::Vec3f> normals;
 	std::vector<OBJLoader::Vec2f> texCoords;
@@ -342,20 +344,27 @@ void loadObj(const std::string &filename, VertexData &vd, IndexedFaceMesh &mesh,
 	OBJLoader::Vec3f s = { (float)scale[0], (float)scale[1], (float)scale[2] };
 	OBJLoader::loadObj(filename, &x, &faces, &normals, &texCoords, s);
 
+	// Initialise mesh and reserve space for vertices
 	mesh.release();
 	const unsigned int nPoints = (unsigned int)x.size();
 	const unsigned int nFaces = (unsigned int)faces.size();
 	const unsigned int nTexCoords = (unsigned int)texCoords.size();
 	mesh.initMesh(nPoints, nFaces * 2, nFaces);
 	vd.reserve(nPoints);
+
+	// Store vertices in VertexData (custom collection of vertices for object in simulation)
 	for (unsigned int i = 0; i < nPoints; i++)
 	{
 		vd.addVertex(Vector3r(x[i][0], x[i][1], x[i][2]));
 	}
+
+	// Add texcoords to the mesh
 	for (unsigned int i = 0; i < nTexCoords; i++)
 	{
 		mesh.addUV(texCoords[i][0], texCoords[i][1]);
 	}
+
+	// Add faces to the mesh
 	for (unsigned int i = 0; i < nFaces; i++)
 	{
 		// Reduce the indices by one
@@ -449,6 +458,7 @@ CubicSDFCollisionDetection::GridPtr generateSDF(const std::string &modelFile, co
 	}
 	else
 	{
+		// If SDF is already provided in a saved file, just load it
 		std::string fileName = collisionObjectFileName;
 		if (FileSystem::isRelativePath(fileName))
 		{
@@ -620,6 +630,8 @@ void readScene(const bool readFile)
 		}
 	}
 
+	// For each tet model, load the model from its OBJ file and generate or load an SDF
+	// Not sure why this is done in the 'rigid bodies' section rather than later
 	for (unsigned int i = 0; i < data.m_tetModelData.size(); i++)
 	{
 		const SceneLoader::TetModelData &tmd = data.m_tetModelData[i];
@@ -628,12 +640,14 @@ void readScene(const bool readFile)
 		if ((tmd.m_modelFileVis != "") &&
 			(objFiles.find(tmd.m_modelFileVis) == objFiles.end()))
 		{
+			// Load OBJ model file, then save vertices and mesh in our map of loaded OBJ files
 			IndexedFaceMesh mesh;
 			VertexData vd;
 			loadObj(FileSystem::normalizePath(tmd.m_modelFileVis), vd, mesh, Vector3r::Ones());
-			objFiles[tmd.m_modelFileVis] = { vd, mesh };
+			objFiles[tmd.m_modelFileVis] = { vd, mesh };	
 		}
 
+		// Create a nice key where we'll save the SDF for this model
 		const std::string basePath = FileSystem::getFilePath(base->getSceneFile());
 		const string cachePath = basePath + "/Cache";
 		const string resStr = to_string(tmd.m_resolutionSDF[0]) + "_" + to_string(tmd.m_resolutionSDF[1]) + "_" + to_string(tmd.m_resolutionSDF[2]);
@@ -643,6 +657,7 @@ void readScene(const bool readFile)
 		std::string sdfKey = tmd.m_collisionObjectFileName;
 		if (sdfKey == "")
 		{
+			// Check if we already generated/loaded and saved an SDF for this model earlier
 			sdfKey = sdfFileName;
 		}
 		if (distanceFields.find(sdfKey) == distanceFields.end())
@@ -650,11 +665,14 @@ void readScene(const bool readFile)
 			// Generate SDF (signed distance field)
 			if (tmd.m_collisionObjectType == SceneLoader::SDF)
 			{
+				// Find the vertices and mesh we extracted from the OBJ file
 				VertexData &vd = objFiles[tmd.m_modelFileVis].first;
 				IndexedFaceMesh &mesh = objFiles[tmd.m_modelFileVis].second;
 
+				// Generate SDF for this model, or load it from existing file
 				CubicSDFCollisionDetection::GridPtr distanceField = generateSDF(tmd.m_modelFileVis, tmd.m_collisionObjectFileName, tmd.m_resolutionSDF, vd, mesh);
 
+				// Save the SDF at an appropriate key
 				if (tmd.m_collisionObjectFileName == "")
 					distanceFields[sdfFileName] = distanceField;
 				else
@@ -800,6 +818,7 @@ void readScene(const bool readFile)
 	// tet models
 	//////////////////////////////////////////////////////////////////////////
 
+	// Load all tet models from their ELE and NODE files
 	// map file names to loaded geometry to prevent multiple imports of same files
 	std::map<pair<string, string>, pair<vector<Vector3r>, vector<unsigned int>>> tetFiles;
 	for (unsigned int i = 0; i < data.m_tetModelData.size(); i++)
@@ -810,6 +829,7 @@ void readScene(const bool readFile)
 		pair<string, string> fileNames = { tmd.m_modelFileNodes, tmd.m_modelFileElements };
 		if (tetFiles.find(fileNames) == tetFiles.end())
 		{
+			// Extract and save list of points and list of tetrahedra for the model
 			vector<Vector3r> vertices;
 			vector<unsigned int> tets;
 			TetGenLoader::loadTetgenModel(FileSystem::normalizePath(tmd.m_modelFileNodes), FileSystem::normalizePath(tmd.m_modelFileElements), vertices, tets);
@@ -859,7 +879,7 @@ void readScene(const bool readFile)
 		// Used to create a slightly nice visualization - i.e. doesn't affect the physics
 		// So the armadillo vis file is a slightly more detailed model that looks much nicer
 		//	while being close enough to the geometry file to keep the physics realistic
-		/*
+		//*
 		if (tmd.m_modelFileVis != "")
 		{ 
 			if (objFiles.find(tmd.m_modelFileVis) != objFiles.end())

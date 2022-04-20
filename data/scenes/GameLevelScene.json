@@ -33,9 +33,9 @@
 	"TetModels": [
 		{
 			"id": 1,
-			"nodeFile": "../models/cube.node",
-			"eleFile": "../models/cube.ele",
-			"visFile": "../models/cube.obj",
+			"nodeFile": "../models/blender_fungus.node",
+			"eleFile": "../models/blender_fungus.ele",
+			"visFile": "../models/blender_fungus.obj",
 			"resolutionSDF": [1,1,1],
 			"translation": [-5,6,0],
 			"rotationAxis": [0, 0, 1],
