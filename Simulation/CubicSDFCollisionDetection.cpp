@@ -72,8 +72,12 @@ double CubicSDFCollisionDetection::CubicSDFCollisionObject::distance(const Eigen
 	return m_invertSDF * m_scale[0]*dist - tolerance;
 }
 
+// Returns true if the particle (?) at position x collides with the SDF
+// Also passes out information about the collision:
+//	cp (?), normal, and distance of collision.
 bool CubicSDFCollisionDetection::CubicSDFCollisionObject::collisionTest(const Vector3r &x, const Real tolerance, Vector3r &cp, Vector3r &n, Real &dist, const Real maxDist)
 {
+	// Scale to size of model
 	const Vector3r scaled_x = x.cwiseProduct(m_scale.cwiseInverse());
 
 	Eigen::Vector3d normal;	

@@ -317,11 +317,11 @@ void initTetModelConstraints()
 
 	// init constraints
 	SimulationModel *model = Simulation::getCurrent()->getModel();
-	solidStiffness = 1.0;
+	solidStiffness = 1;
 	if (solidSimulationMethod == 5)
 		solidStiffness = 100000;
 
-	volumeStiffness = 1.0;
+	volumeStiffness = 1;
 	if (solidSimulationMethod == 5)
 		volumeStiffness = 100000;
 	for (unsigned int cm = 0; cm < model->getTetModels().size(); cm++)
@@ -330,6 +330,8 @@ void initTetModelConstraints()
 			solidPoissonRatio, volumeStiffness, solidNormalizeStretch, solidNormalizeShear);
 	}
 
+	cout << "Solid stiffness: " << solidStiffness << endl;
+	cout << "Volume stiffness: " << volumeStiffness << endl;
 	cout << "Simulation has " << model->getTetModels().size() << " tet models." << endl;
 }
 
@@ -657,7 +659,7 @@ void readScene(const bool readFile)
 		std::string sdfKey = tmd.m_collisionObjectFileName;
 		if (sdfKey == "")
 		{
-			// Check if we already generated/loaded and saved an SDF for this model earlier
+			// User didn't provide an SDF to be loaded from an existing file
 			sdfKey = sdfFileName;
 		}
 		if (distanceFields.find(sdfKey) == distanceFields.end())
@@ -670,6 +672,7 @@ void readScene(const bool readFile)
 				IndexedFaceMesh &mesh = objFiles[tmd.m_modelFileVis].second;
 
 				// Generate SDF for this model, or load it from existing file
+				// Note that the SDF is generated entirely from the OBJ
 				CubicSDFCollisionDetection::GridPtr distanceField = generateSDF(tmd.m_modelFileVis, tmd.m_collisionObjectFileName, tmd.m_resolutionSDF, vd, mesh);
 
 				// Save the SDF at an appropriate key
@@ -873,7 +876,7 @@ void readScene(const bool readFile)
 		unsigned int offset = tm->getIndexOffset();
 
 		// Tell TetModel initial translation,rotation, and scale
-		//	I don't think this does anything apart from inform the model
+		//	I don't think this does anything apart from inform the modelcd
 		//	We already put these parameters into effect earlier by manipulating the vertices
 		tm->setInitialX(tmd.m_x);
 		tm->setInitialR(R);
@@ -886,7 +889,7 @@ void readScene(const bool readFile)
 			pd.setMass(index, 0.0);
 		}
 
-		// read visualization mesh
+		// Apply visualization mesh extracted from OBJ file to TetModel
 		// Used to create a slightly nicer visualization - i.e. doesn't affect the physics
 		// So the armadillo vis file is a slightly more detailed model that looks much nicer
 		//	while being close enough to the geometry file to keep the physics realistic
@@ -897,7 +900,7 @@ void readScene(const bool readFile)
 			{	
 				// Tell TetModel, which up till now had no knowledge of the OBJ file,
 				//	to use the vertices and mesh extracted from the OBJ for visualization.
-				//	Up till now the TetModel only new about the info in the ELE and NODE files,
+				//	Until now the TetModel only new about the info in the ELE and NODE files,
 				//	which are lower quality for the physics to work well.
 				IndexedFaceMesh &visMesh = tm->getVisMesh();
 				VertexData &vdVis = tm->getVisVertices();
@@ -959,6 +962,10 @@ void readScene(const bool readFile)
 
 		const SceneLoader::TetModelData &tmd = data.m_tetModelData[i];
 
+		// Create requested collision object
+		//	Uses all the particles in the model.
+		//	m_invertSDF just inverts the SDF when checking for a collision, if needed - why?
+		//	Collision object is scaled up as requested in collisionObjectScale
 		switch (tmd.m_collisionObjectType)
 		{
 		case SceneLoader::No_Collision_Object: 
@@ -984,8 +991,12 @@ void readScene(const bool readFile)
 			break;
 		case SceneLoader::SDF:
 		{
+			// Create SDF collision object, using SDF we generated or loaded earlier
+			//	First try to remember at what key we stored that SDF, depending on
+			//	whether we generated it or loaded it
 			if (tmd.m_collisionObjectFileName == "")
 			{
+
 				const std::string basePath = FileSystem::getFilePath(base->getSceneFile());
 				const string cachePath = basePath + "/Cache";
 				const string resStr = to_string(tmd.m_resolutionSDF[0]) + "_" + to_string(tmd.m_resolutionSDF[1]) + "_" + to_string(tmd.m_resolutionSDF[2]);
