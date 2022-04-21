@@ -357,7 +357,7 @@ void DemoBase::render()
 			renderParticleRigidBodyContact(particleRigidBodyContacts[i]);
 	}
 
-
+	// Render rigid bodies
 	for (size_t i = 0; i < rb.size(); i++)
 	{
 		bool selected = false;
@@ -365,6 +365,11 @@ void DemoBase::render()
 		{
 			if (m_selectedBodies[j] == i)
 				selected = true;
+		}
+
+		bool isInvisible = !(rb[i]->getIsVisible());
+		if (isInvisible) {
+			continue;
 		}
 
 		const VertexData &vd = rb[i]->getGeometry().getVertexData();

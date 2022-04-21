@@ -134,7 +134,7 @@ int main( int argc, char **argv )
 
 	buildModel();
 
-	ForceController::setControlledObject(1);	// The cube character in GameLevelScene.json
+	ForceController::setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
 
 	base->createParameterGUI();
 	base->readParameters();
@@ -716,6 +716,11 @@ void readScene(const bool readFile)
 		}
 		rb[i]->setRestitutionCoeff(rbd.m_restitutionCoeff);
 		rb[i]->setFrictionCoeff(rbd.m_frictionCoeff);
+
+		if (!rbd.m_isVisible)
+		{
+			rb[i]->setIsVisible(false);
+		}
 
 		const std::vector<Vector3r> &vertices = rb[i]->getGeometry().getVertexDataLocal().getVertices();
 		const unsigned int nVert = static_cast<unsigned int>(vertices.size());

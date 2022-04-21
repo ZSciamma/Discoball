@@ -240,6 +240,10 @@ void SceneLoader::readRigidBodies(const nlohmann::json &j, const std::string &ke
 			rbd.m_flatShading = false;
 			readValue(rigidBody, "flatShading", rbd.m_flatShading);
 
+			// is visible
+			rbd.m_isVisible = true;
+			readValue(rigidBody, "isVisible", rbd.m_isVisible);
+
 			// density
 			rbd.m_density = 1.0;
 			readValue(rigidBody, "density", rbd.m_density);

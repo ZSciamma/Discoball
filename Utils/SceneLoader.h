@@ -24,6 +24,7 @@ namespace Utilities
 			std::string m_modelFile;
 			bool m_flatShading;
 			bool m_isDynamic;
+			bool m_isVisible;
 			Real m_density;
 			Vector3r m_x;
 			Quaternionr m_q;

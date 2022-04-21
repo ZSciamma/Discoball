@@ -69,6 +69,8 @@ namespace PBD
 
 			RigidBodyGeometry m_geometry;
 
+			bool m_isVisible = true;
+
 			// transformation required to transform a point to local space or vice vera
 			Matrix3r m_transformation_R;
 			Vector3r m_transformation_v1;
@@ -263,6 +265,14 @@ namespace PBD
 			const Vector3r &getTransformationV1() { return m_transformation_v1; }
 			const Vector3r &getTransformationV2() { return m_transformation_v2; }
 			const Vector3r &getTransformationRXV1() { return m_transformation_R_X_v1; }
+
+			void setIsVisible(bool isVisible) {
+				m_isVisible = isVisible;
+			}
+
+			bool getIsVisible() {
+				return m_isVisible;
+			}
 
 			FORCE_INLINE Real &getMass()
 			{
