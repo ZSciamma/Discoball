@@ -876,7 +876,7 @@ void readScene(const bool readFile)
 		unsigned int offset = tm->getIndexOffset();
 
 		// Tell TetModel initial translation,rotation, and scale
-		//	I don't think this does anything apart from inform the modelcd
+		//	I don't think this does anything apart from inform the model
 		//	We already put these parameters into effect earlier by manipulating the vertices
 		tm->setInitialX(tmd.m_x);
 		tm->setInitialR(R);
