@@ -906,7 +906,7 @@ void DemoBase::selection(const Vector2i &start, const Vector2i &end, void *clien
 		cout << "Done listing." << endl;
 	}
 	if (base->m_selectedParticles.size() > 0) {
-		cout << "Listing selected bodies:" << endl;
+		cout << "Listing selected particles:" << endl;
 		for (int particle : base->m_selectedParticles) {
 			cout << "Selected body: " << particle << endl;
 		}
