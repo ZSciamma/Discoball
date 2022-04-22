@@ -136,6 +136,7 @@ int main( int argc, char **argv )
 	buildModel();
 
 	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
+	ForceController::setMousePosFunc(MiniGL::getMousePos);
 	Camera::getCurrent()->setControlledObject(0);
 	Camera::getCurrent()->setMoveFunc(MiniGL::move);
 
@@ -145,6 +146,7 @@ int main( int argc, char **argv )
 	// OpenGL
 	MiniGL::setClientIdleFunc (timeStep);
 	MiniGL::addKeyFunc('r', reset);
+	MiniGL::addMousePressFunc(ForceController::mouseInput);
 	//MiniGL::addKeyFunc('s', ForceController::inputLeft);
 	//MiniGL::addKeyFunc('d', ForceController::inputRight);
 	MiniGL::addKeyboardFunc(ForceController::keyboardInput);

@@ -12,16 +12,21 @@ using namespace PBD;
 class ForceController {
     private:
         static ForceController* current;
+        double mouse_old_x; // Mouse position last time we fetched it, which could be a long time ago
+        double mouse_old_y;
         Vector3r m_force;
         int m_xDirection = 0;   // -1 if we're going left, 1 if right
-        bool m_leftPressed = 0; // True if left key is held down in latest frame
-        bool m_rightPressed = 0;
-        bool m_jumpPressed = 0;
+        bool m_mousePressed = false;
+        bool m_leftPressed = false; // True if left key is held down in latest frame
+        bool m_rightPressed = false;
+        bool m_jumpPressed = false;
+
+        typedef std::function<void(double&, double&)> MousePosFct;
+        static MousePosFct mousePosFunc;
 
     public:
-        int CONTROLLED_OBJECT = -1;   // Object to be moved by external force (index in rigidbody list)
+        int controllerObject = -1;   // Object to be moved by external force (index in rigidbody list)
 
-    public:
         // Singleton
         static ForceController* getCurrent();
         static void setCurrent(ForceController* controller);
@@ -29,11 +34,16 @@ class ForceController {
         void setControlledObject (int index);
 
         // Set the rigidbody's acceleration according to the force being applied on it
-        virtual void setExternalForceAcceleration(SimulationModel &model);
+        void setExternalForceAcceleration(SimulationModel &model);
 
         // OpenGL callbacks
         // Called when there's any input. True if the function wants to 'use up' this event
+        // Need to be static so they can be set as callbacks
+        static void setMousePosFunc(MousePosFct func) {mousePosFunc = func;}
+        static bool mouseInput(int button, int action, int mods);
         static bool keyboardInput(int key, int scancode, int action, int mod);
+
+        bool mousePressed(int button, int action, int mods);
         bool keyPressed(unsigned char key);
         bool keyReleased(unsigned char key);
 };

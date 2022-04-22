@@ -199,6 +199,8 @@ namespace PBD
 		static void addMouseWheelFunc(MouseWheelFct func) { m_mouseWheelFct.push_back(func); }
 		static std::vector<MouseWheelFct>& getMouseWheelFunc() { return m_mouseWheelFct; }
 
+		static void getMousePos(double &mouse_pos_x, double &mouse_pos_y);
+
 		static void setBreakPointActive(const bool active);
 		static void breakPoint();
 

@@ -3,6 +3,7 @@
 using namespace std;
 
 ForceController* ForceController::current = nullptr;
+ForceController::MousePosFct ForceController::mousePosFunc = nullptr;
 
 ForceController* ForceController::getCurrent() {
     if (current == nullptr) {
@@ -16,19 +17,25 @@ void ForceController::setCurrent(ForceController* controller) {
 }
 
 void ForceController::setControlledObject (int index) {
-    CONTROLLED_OBJECT = index;
+    controllerObject = index;
 }
 
 // Set the rigidbody's acceleration according to the force being applied on it
+// Called by the physics when it's ready for the force to be applied
 void ForceController::setExternalForceAcceleration(SimulationModel &model) {
     
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
 
     // Try find the character
-    if (CONTROLLED_OBJECT < 0 || CONTROLLED_OBJECT >= rb.size()) {
+    if (controllerObject < 0 || controllerObject >= rb.size()) {
         return;
     }
-    Vector3r &acc = rb[CONTROLLED_OBJECT]->getAcceleration();
+    Vector3r &acc = rb[controllerObject]->getAcceleration();
+
+    if (m_mousePressed) {
+        acc += Vector3r(0.0, 1000.0, 0.0);
+        m_mousePressed = false;
+    }
 
     switch (m_xDirection) {
         case -1:
@@ -44,7 +51,24 @@ void ForceController::setExternalForceAcceleration(SimulationModel &model) {
         m_jumpPressed = false;
     }
 
-    //cout << "Object " << CONTROLLED_OBJECT << " acceleration set to -1." << endl;
+    //cout << "Object " << controllerObject << " acceleration set to -1." << endl;
+}
+
+bool ForceController::mouseInput(int button, int action, int mods) {
+    if (action == 1) 
+        return current->mousePressed(button, action, mods);
+    return false;
+}
+
+bool ForceController::mousePressed(int button, int action, int mods) {
+    // Get mouse position from GL
+    mousePosFunc(mouse_old_x, mouse_old_y);
+
+    // Set m_mousePressed for next time physics comes around
+    m_mousePressed = true;
+
+    //cout << "Mouse pressed! Mouse position: " << mouse_old_x << ", " << mouse_old_y << endl;
+    return false;       // Pretend we don't want it so others can use it
 }
 
 bool ForceController::keyboardInput(int key, int scancode, int action, int mod) {

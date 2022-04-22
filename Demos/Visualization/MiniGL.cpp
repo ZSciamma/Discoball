@@ -815,6 +815,10 @@ void MiniGL::rotateX(Real x)
 	m_rotation = quat*m_rotation;
 }
 
+void MiniGL::getMousePos(double &mouse_pos_x, double &mouse_pos_y) {
+	glfwGetCursorPos(m_glfw_window, &mouse_pos_x, &mouse_pos_y);
+}
+
 void MiniGL::mousePress(GLFWwindow* window, int button, int action, int mods)
 {
 	//getting cursor position
@@ -1042,7 +1046,7 @@ void MiniGL::mainLoop()
 			scenefunc();
 
 		TwDraw();  // draw the tweak bar(s)
-		movieWriter->addFrameGL();
+		//movieWriter->addFrameGL();
 
 		glfwSwapBuffers(m_glfw_window);
 		//glFlush();
@@ -1056,7 +1060,7 @@ void MiniGL::mainLoop()
 	TwTerminate();
 	glfwTerminate();
 
-	movieWriter->writeMovie("~/Documents/movies/demo_clip.mpeg");
+	//movieWriter->writeMovie("~/Documents/movies/demo_clip.mpeg");
 
 	destroy();
 }
