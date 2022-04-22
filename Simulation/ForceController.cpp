@@ -39,6 +39,11 @@ void ForceController::setExternalForceAcceleration(SimulationModel &model) {
             break;
     }
 
+    if (m_jumpPressed) {
+        acc += Vector3r(0.0, 1000.0, 0.0);
+        m_jumpPressed = false;
+    }
+
     //cout << "Object " << CONTROLLED_OBJECT << " acceleration set to -1." << endl;
 }
 
