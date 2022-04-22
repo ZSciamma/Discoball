@@ -28,8 +28,8 @@
 		"solid_normalizeStretch": 0,
 		"solid_normalizeShear": 0
 	},	
-	"cameraLookat": [0,0,0],
-    "cameraPosition": [0,10,30],
+	"cameraLookat": [3.8,5.2,0],
+    "cameraPosition": [3.8,15.2,30],
 	"TetModels": [
 		{
 			"id": 1,

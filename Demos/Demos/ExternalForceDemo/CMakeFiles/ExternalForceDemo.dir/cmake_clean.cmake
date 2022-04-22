@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o.d"
   "CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o"
   "CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o.d"
+  "CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o"
+  "CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o.d"
   "CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o"
   "CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o.d"
   "CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o"

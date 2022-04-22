@@ -19,6 +19,7 @@
 #include "Demos/Common/TweakBarParameters.h"
 #include "Simulation/Simulation.h"
 #include "Simulation/ForceController.h"
+#include "Demos/Visualization/Camera.h"
 
 #define _USE_MATH_DEFINES
 #include "math.h"
@@ -135,6 +136,8 @@ int main( int argc, char **argv )
 	buildModel();
 
 	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
+	Camera::getCurrent()->setControlledObject(0);
+	Camera::getCurrent()->setMoveFunc(MiniGL::move);
 
 	base->createParameterGUI();
 	base->readParameters();
@@ -252,6 +255,8 @@ void timeStep ()
 		model->getTriangleModels()[i]->updateMeshNormals(pd);
 	}
 	//base->setValue(DemoBase::PAUSE, true);
+
+	Camera::getCurrent()->update();
 }
 
 void render()

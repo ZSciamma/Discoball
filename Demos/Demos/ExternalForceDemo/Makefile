@@ -247,6 +247,30 @@ __/Common/TweakBarParameters.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.s
 .PHONY : __/Common/TweakBarParameters.cpp.s
 
+__/Visualization/Camera.o: __/Visualization/Camera.cpp.o
+.PHONY : __/Visualization/Camera.o
+
+# target to build an object file
+__/Visualization/Camera.cpp.o:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o
+.PHONY : __/Visualization/Camera.cpp.o
+
+__/Visualization/Camera.i: __/Visualization/Camera.cpp.i
+.PHONY : __/Visualization/Camera.i
+
+# target to preprocess a source file
+__/Visualization/Camera.cpp.i:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.i
+.PHONY : __/Visualization/Camera.cpp.i
+
+__/Visualization/Camera.s: __/Visualization/Camera.cpp.s
+.PHONY : __/Visualization/Camera.s
+
+# target to generate assembly for a file
+__/Visualization/Camera.cpp.s:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.s
+.PHONY : __/Visualization/Camera.cpp.s
+
 __/Visualization/MiniGL.o: __/Visualization/MiniGL.cpp.o
 .PHONY : __/Visualization/MiniGL.o
 
@@ -341,6 +365,9 @@ help:
 	@echo "... __/Common/TweakBarParameters.o"
 	@echo "... __/Common/TweakBarParameters.i"
 	@echo "... __/Common/TweakBarParameters.s"
+	@echo "... __/Visualization/Camera.o"
+	@echo "... __/Visualization/Camera.i"
+	@echo "... __/Visualization/Camera.s"
 	@echo "... __/Visualization/MiniGL.o"
 	@echo "... __/Visualization/MiniGL.i"
 	@echo "... __/Visualization/MiniGL.s"

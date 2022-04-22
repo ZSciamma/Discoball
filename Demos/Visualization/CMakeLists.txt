@@ -10,6 +10,7 @@ set(VIS_SOURCE_FILES
 	${PROJECT_SOURCE_DIR}/extern/glfw/deps/glad_gl.c
 	${PROJECT_PATH}/Demos/Visualization/MiniGL.cpp                       
 	${PROJECT_PATH}/Demos/Visualization/Shader.cpp
+	${PROJECT_PATH}/Demos/Visualization/Camera.cpp
 	) 
 	
 
