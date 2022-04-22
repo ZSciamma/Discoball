@@ -560,7 +560,7 @@ void MiniGL::initTweakBarParameters()
 
 	// Add callback to toggle auto-rotate mode (callback functions are defined above).
 	TwAddVarCB(m_tweakBar, "Wireframe", TW_TYPE_BOOL32, setWireframeCB, getWireframeCB, NULL,
-		" label='Wireframe' key=w help='Toggle wireframe mode.' ");
+		" label='Wireframe' key=i help='Toggle wireframe mode.' ");		// Was originally w; changed for WASD convenience
 
 }
 
@@ -672,7 +672,7 @@ void MiniGL::keyboard(GLFWwindow* window, int key, int scancode, int action, int
 #endif
 		return;
 	}
-	else if (key == GLFW_KEY_A)
+	else if (key == GLFW_KEY_U)
 		move (0, 0, movespeed);
 	else if (key == GLFW_KEY_Y)
 		move (0, 0, -movespeed);
@@ -688,6 +688,8 @@ void MiniGL::keyboard(GLFWwindow* window, int key, int scancode, int action, int
 		m_breakPointLoop = false;	
 }
 
+// Called by glfw whenever a key is pressed
+//	If a key stays down, this is called every frame
 void MiniGL::char_callback(GLFWwindow* window, unsigned int codepoint)
 {
 	// Check if registered listener wants the event

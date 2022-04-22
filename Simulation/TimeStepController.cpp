@@ -87,7 +87,7 @@ void TimeStepController::step(SimulationModel &model)
 	ParticleData &pd = model.getParticles();
 	OrientationData &od = model.getOrientations();
 
-	ForceController::setExternalForceAcceleration(model);							// MAKE THIS MORE EFFICIENT!!
+	ForceController::getCurrent()->setExternalForceAcceleration(model);							// MAKE THIS MORE EFFICIENT!!
 
 	const int numBodies = (int)rb.size();
 

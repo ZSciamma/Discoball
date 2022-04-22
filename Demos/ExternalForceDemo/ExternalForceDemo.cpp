@@ -134,16 +134,17 @@ int main( int argc, char **argv )
 
 	buildModel();
 
-	ForceController::setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
+	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
 
 	base->createParameterGUI();
 	base->readParameters();
 
 	// OpenGL
-	MiniGL::setClientIdleFunc (timeStep);		
+	MiniGL::setClientIdleFunc (timeStep);
 	MiniGL::addKeyFunc('r', reset);
-	MiniGL::addKeyFunc('s', ForceController::applyForceLeft);
-	MiniGL::addKeyFunc('d', ForceController::applyForceRight);
+	//MiniGL::addKeyFunc('s', ForceController::inputLeft);
+	//MiniGL::addKeyFunc('d', ForceController::inputRight);
+	MiniGL::addKeyboardFunc(ForceController::keyboardInput);
 	MiniGL::setClientSceneFunc(render);			
 	MiniGL::setViewport(40.0f, 0.1f, 500.0f, camPos, camLookat);
 	

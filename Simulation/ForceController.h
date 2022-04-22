@@ -10,18 +10,32 @@ using namespace PBD;
 // Monitors the amount of external force currently applied on an object
 //  Force might be applied through some external input
 class ForceController {
+    private:
+        static ForceController* current;
+        Vector3r m_force;
+        int m_xDirection = 0;   // -1 if we're going left, 1 if right
+        bool m_leftPressed = 0; // True if left key is held down in latest frame
+        bool m_rightPressed = 0;
+        bool m_jumpPressed = 0;
+
     public:
-        static int CONTROLLED_OBJECT;   // Object to be moved by external force (index in rigidbody list)
-        static Vector3r m_force;
-        static int forceDirection;
+        int CONTROLLED_OBJECT = -1;   // Object to be moved by external force (index in rigidbody list)
+
     public:
-        static void setControlledObject (int index);
+        // Singleton
+        static ForceController* getCurrent();
+        static void setCurrent(ForceController* controller);
+
+        void setControlledObject (int index);
 
         // Set the rigidbody's acceleration according to the force being applied on it
-        static void setExternalForceAcceleration(SimulationModel &model);
+        virtual void setExternalForceAcceleration(SimulationModel &model);
 
-        static void applyForceLeft();
-        static void applyForceRight();
+        // OpenGL callbacks
+        // Called when there's any input. True if the function wants to 'use up' this event
+        static bool keyboardInput(int key, int scancode, int action, int mod);
+        bool keyPressed(unsigned char key);
+        bool keyReleased(unsigned char key);
 };
 
 /*
