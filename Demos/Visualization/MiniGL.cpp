@@ -25,6 +25,8 @@
 #include <iostream>
 #include "Utils/Logger.h"
 
+#include "FFMPEG_MOVIE.h"
+
 using namespace PBD;
 
 float MiniGL::fovy = 45;
@@ -75,7 +77,7 @@ std::vector<MiniGL::Triangle> MiniGL::m_drawTriangle;
 std::vector<MiniGL::Line> MiniGL::m_drawLines;
 std::vector<MiniGL::Point> MiniGL::m_drawPoints;
 
-
+FFMPEG_MOVIE* movieWriter;
 
 void MiniGL::drawTime( const Real time )
 {
@@ -503,6 +505,8 @@ void MiniGL::init(int argc, char **argv, const int width, const int height, cons
 	initTweakBar();
 
 	glPolygonMode (GL_FRONT_AND_BACK, GL_FILL);
+
+	movieWriter = new FFMPEG_MOVIE(width, height);
 }
 
 void MiniGL::initTexture()
@@ -619,6 +623,8 @@ void MiniGL::cleanupTweakBar()
 void MiniGL::destroy ()
 {
 	gluDeleteQuadric(m_sphereQuadric);
+
+	delete movieWriter;
 }
 
 void MiniGL::reshape (GLFWwindow* glfw_window, int w, int h)
@@ -1036,6 +1042,7 @@ void MiniGL::mainLoop()
 			scenefunc();
 
 		TwDraw();  // draw the tweak bar(s)
+		movieWriter->addFrameGL();
 
 		glfwSwapBuffers(m_glfw_window);
 		//glFlush();
@@ -1048,6 +1055,8 @@ void MiniGL::mainLoop()
 
 	TwTerminate();
 	glfwTerminate();
+
+	movieWriter->writeMovie("~/Documents/movies/demo_clip.mpeg");
 
 	destroy();
 }
