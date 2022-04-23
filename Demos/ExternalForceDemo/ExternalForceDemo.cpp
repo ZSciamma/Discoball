@@ -19,7 +19,7 @@
 #include "Demos/Common/TweakBarParameters.h"
 #include "Simulation/Simulation.h"
 #include "Demos/Visualization/Camera.h"
-#include "PlayerController.h"
+#include "Simulation/PlayerController.h"
 
 #define _USE_MATH_DEFINES
 #include "math.h"
@@ -137,6 +137,8 @@ int main( int argc, char **argv )
 
 	// Setup functions for character movement
 	PlayerController::getCurrent()->init(0);
+	PlayerController::setMousePosFunc(MiniGL::getMousePos);
+	PlayerController::setWorldToScreenFunc(MiniGL::project);
 	
 
 	//Thrusters::getCurrent()->setControlledObject(0);	

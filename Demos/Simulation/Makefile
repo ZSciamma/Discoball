@@ -367,6 +367,30 @@ NeighborhoodSearchSpatialHashing.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.s
 .PHONY : NeighborhoodSearchSpatialHashing.cpp.s
 
+PlayerController.o: PlayerController.cpp.o
+.PHONY : PlayerController.o
+
+# target to build an object file
+PlayerController.cpp.o:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o
+.PHONY : PlayerController.cpp.o
+
+PlayerController.i: PlayerController.cpp.i
+.PHONY : PlayerController.i
+
+# target to preprocess a source file
+PlayerController.cpp.i:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.i
+.PHONY : PlayerController.cpp.i
+
+PlayerController.s: PlayerController.cpp.s
+.PHONY : PlayerController.s
+
+# target to generate assembly for a file
+PlayerController.cpp.s:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.s
+.PHONY : PlayerController.cpp.s
+
 RigidBodyGeometry.o: RigidBodyGeometry.cpp.o
 .PHONY : RigidBodyGeometry.o
 
@@ -620,6 +644,9 @@ help:
 	@echo "... NeighborhoodSearchSpatialHashing.o"
 	@echo "... NeighborhoodSearchSpatialHashing.i"
 	@echo "... NeighborhoodSearchSpatialHashing.s"
+	@echo "... PlayerController.o"
+	@echo "... PlayerController.i"
+	@echo "... PlayerController.s"
 	@echo "... RigidBodyGeometry.o"
 	@echo "... RigidBodyGeometry.i"
 	@echo "... RigidBodyGeometry.s"

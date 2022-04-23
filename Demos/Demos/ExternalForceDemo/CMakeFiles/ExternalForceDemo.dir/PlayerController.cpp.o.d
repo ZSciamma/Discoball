@@ -451,15 +451,5 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o:
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/Parameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/EnumParameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/VectorParameter.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/MiniGL.h \
- /usr/include/eigen3/Eigen/Geometry \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Shader.h \
- /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h \
- /usr/include/c++/11/bits/erase_if.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/glfw/src/../deps/glad/gl.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/glfw/src/../deps/glad/khrplatform.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/AntTweakBar/include/AntTweakBar.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/SimulationModel.h

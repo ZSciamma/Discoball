@@ -1,9 +1,10 @@
 #include "PlayerController.h"
 
-#include "Demos/Visualization/MiniGL.h"
-#include "Simulation/Thrusters.h"
+#include "Thrusters.h"
 
 PlayerController* PlayerController::current = nullptr;
+PlayerController::MousePosFct PlayerController::mousePosFunc = nullptr;
+PlayerController::WorldToScreenFct PlayerController::worldToScreenFunc = nullptr;
 
 PlayerController* PlayerController::getCurrent() {
     if (current == nullptr) {
@@ -22,7 +23,7 @@ bool PlayerController::mousePressed(int button, int action, int mods) {
     if (action != 1) 
         return false;
 
-    MiniGL::getMousePos(current->oldMouseX, current->oldMouseY);
+    mousePosFunc(current->oldMouseX, current->oldMouseY);
 
     current->m_mousePressed = true;
 
@@ -54,7 +55,7 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model) {
     Vector3r playerWorldPos = rb[m_playerObj]->getPosition();                      // IS THIS ACCURATE? MAYBE THIS IS NOT WHAT THE PLAYER SEES! WHAT IF THE CALLBACK INTERRUPTED SOME PHYSICS, AND IT'S MOVED SINCE?
     double playerScreenPosX, playerScreenPosY;
 
-    MiniGL::project(playerWorldPos, playerScreenPosX, playerScreenPosY);
+    worldToScreenFunc(playerWorldPos, playerScreenPosX, playerScreenPosY);
     //std::cout << "Mouse position: " << oldMouseX << ", " << oldMouseY << std::endl;
     //std::cout << "Player position: " << playerScreenPosX << ", " << playerScreenPosY << std::endl;
 

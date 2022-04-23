@@ -199,30 +199,6 @@ ExternalForceDemo.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.s
 .PHONY : ExternalForceDemo.cpp.s
 
-PlayerController.o: PlayerController.cpp.o
-.PHONY : PlayerController.o
-
-# target to build an object file
-PlayerController.cpp.o:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o
-.PHONY : PlayerController.cpp.o
-
-PlayerController.i: PlayerController.cpp.i
-.PHONY : PlayerController.i
-
-# target to preprocess a source file
-PlayerController.cpp.i:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.i
-.PHONY : PlayerController.cpp.i
-
-PlayerController.s: PlayerController.cpp.s
-.PHONY : PlayerController.s
-
-# target to generate assembly for a file
-PlayerController.cpp.s:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/build.make Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.s
-.PHONY : PlayerController.cpp.s
-
 __/Common/DemoBase.o: __/Common/DemoBase.cpp.o
 .PHONY : __/Common/DemoBase.o
 
@@ -383,9 +359,6 @@ help:
 	@echo "... ExternalForceDemo.o"
 	@echo "... ExternalForceDemo.i"
 	@echo "... ExternalForceDemo.s"
-	@echo "... PlayerController.o"
-	@echo "... PlayerController.i"
-	@echo "... PlayerController.s"
 	@echo "... __/Common/DemoBase.o"
 	@echo "... __/Common/DemoBase.i"
 	@echo "... __/Common/DemoBase.s"

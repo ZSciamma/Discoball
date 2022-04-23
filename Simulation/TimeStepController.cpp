@@ -5,7 +5,7 @@
 #include <iostream>
 #include "PositionBasedDynamics/PositionBasedDynamics.h"
 #include "Utils/Timing.h"
-#include "Demos/ExternalForceDemo/PlayerController.h"							// THIS MIGHT BE A PROBLEM. WE CAN'T RUN OTHER DEMOS. MOVE PLAYERCONTROLLER TO SIMULATION
+#include "Simulation/PlayerController.h"							// THIS MIGHT BE A PROBLEM. WE CAN'T RUN OTHER DEMOS. MOVE PLAYERCONTROLLER TO SIMULATION
 
 using namespace PBD;
 using namespace std;

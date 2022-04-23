@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Simulation.dir/LineModel.cpp.o.d"
   "CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o"
   "CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o.d"
+  "CMakeFiles/Simulation.dir/PlayerController.cpp.o"
+  "CMakeFiles/Simulation.dir/PlayerController.cpp.o.d"
   "CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o"
   "CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o.d"
   "CMakeFiles/Simulation.dir/Simulation.cpp.o"

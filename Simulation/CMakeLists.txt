@@ -8,8 +8,6 @@ add_library(Simulation
 		CubicSDFCollisionDetection.h
 		DistanceFieldCollisionDetection.cpp
 		DistanceFieldCollisionDetection.h
-		Thrusters.cpp
-		Thrusters.h
 		IDFactory.cpp
 		IDFactory.h
 		LineModel.cpp
@@ -17,6 +15,8 @@ add_library(Simulation
 		NeighborhoodSearchSpatialHashing.cpp
 		NeighborhoodSearchSpatialHashing.h
 		ParticleData.h
+		PlayerController.cpp
+		PlayerController.h
 		RigidBody.h
 		RigidBodyGeometry.cpp
 		RigidBodyGeometry.h
@@ -34,6 +34,8 @@ add_library(Simulation
 		TimeStepController.h
 		TriangleModel.cpp
 		TriangleModel.h
+		Thrusters.cpp
+		Thrusters.h
 		
 		BoundingSphere.h
 		BoundingSphereHierarchy.cpp
