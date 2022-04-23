@@ -4,6 +4,7 @@ using namespace std;
 
 ForceController* ForceController::current = nullptr;
 ForceController::MousePosFct ForceController::mousePosFunc = nullptr;
+ForceController::WorldToScreenFct ForceController::worldToScreenFunc = nullptr;
 
 ForceController* ForceController::getCurrent() {
     if (current == nullptr) {
@@ -17,7 +18,7 @@ void ForceController::setCurrent(ForceController* controller) {
 }
 
 void ForceController::setControlledObject (int index) {
-    controllerObject = index;
+    controlledObject = index;
 }
 
 // Set the rigidbody's acceleration according to the force being applied on it
@@ -27,14 +28,42 @@ void ForceController::setExternalForceAcceleration(SimulationModel &model) {
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
 
     // Try find the character
-    if (controllerObject < 0 || controllerObject >= rb.size()) {
+    if (controlledObject < 0 || controlledObject >= rb.size()) {
         return;
     }
-    Vector3r &acc = rb[controllerObject]->getAcceleration();
+    Vector3r &acc = rb[controlledObject]->getAcceleration();
 
     if (m_mousePressed) {
-        acc += Vector3r(0.0, 1000.0, 0.0);
         m_mousePressed = false;
+
+        Vector3r playerWorldPos = rb[controlledObject]->getPosition();
+        double playerScreenPosX, playerScreenPosY;
+
+        worldToScreenFunc(playerWorldPos, playerScreenPosX, playerScreenPosY);
+        
+        //std::cout << "Mouse position: " << mouse_old_x << ", " << mouse_old_y << std::endl;
+        //std::cout << "Player position: " << playerScreenPosX << ", " << playerScreenPosY << std::endl;
+
+        // Calculate angle between mouse and character
+        double xDist = mouse_old_x - playerScreenPosX;
+        double yDist = mouse_old_y - playerScreenPosY;
+        if (xDist == 0)
+            xDist = 0.1;
+        double angle = atan(yDist / xDist);
+        //cout << "angle" << angle << endl;
+
+        // Calculate force in each direction
+        double xFactor = cos(angle);
+        if (xDist > 0)
+            xFactor = -xFactor;
+        double yFactor = -sin(angle);
+        if (xDist > 0)
+            yFactor = -yFactor;
+        double magnitude = 1000;
+        Vector3r force = Vector3r(magnitude*xFactor, magnitude*yFactor, 0);
+
+        // Apply force
+        acc += force;
     }
 
     switch (m_xDirection) {
@@ -50,8 +79,6 @@ void ForceController::setExternalForceAcceleration(SimulationModel &model) {
         acc += Vector3r(0.0, 1000.0, 0.0);
         m_jumpPressed = false;
     }
-
-    //cout << "Object " << controllerObject << " acceleration set to -1." << endl;
 }
 
 bool ForceController::mouseInput(int button, int action, int mods) {
@@ -61,13 +88,12 @@ bool ForceController::mouseInput(int button, int action, int mods) {
 }
 
 bool ForceController::mousePressed(int button, int action, int mods) {
-    // Get mouse position from GL
+    // Get current mouse position from GL;
     mousePosFunc(mouse_old_x, mouse_old_y);
-
+    
     // Set m_mousePressed for next time physics comes around
     m_mousePressed = true;
 
-    //cout << "Mouse pressed! Mouse position: " << mouse_old_x << ", " << mouse_old_y << endl;
     return false;       // Pretend we don't want it so others can use it
 }
 

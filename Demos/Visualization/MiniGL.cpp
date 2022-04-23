@@ -815,8 +815,9 @@ void MiniGL::rotateX(Real x)
 	m_rotation = quat*m_rotation;
 }
 
-void MiniGL::getMousePos(double &mouse_pos_x, double &mouse_pos_y) {
-	glfwGetCursorPos(m_glfw_window, &mouse_pos_x, &mouse_pos_y);
+void MiniGL::getMousePos(double &mousePosX, double &mousePosY) {
+	// Get cursor position onscreen (top left corner is 0, 0)
+	glfwGetCursorPos(m_glfw_window, &mousePosX, &mousePosY);
 }
 
 void MiniGL::mousePress(GLFWwindow* window, int button, int action, int mods)
@@ -930,6 +931,28 @@ void MiniGL::unproject(const int x, const int y, Vector3r &pos)
 	pos[0] = (Real) resx;
 	pos[1] = (Real) resy;
 	pos[2] = (Real) resz;
+}
+
+// Takes a point in the world and returns its coordinates onscreen
+//	Agrees with screen origin, which is top left corner
+void MiniGL::project(Vector3r point, double &screenX, double &screenY) {
+	GLint viewport[4];
+	GLdouble mv[16], pm[16];
+	glGetIntegerv(GL_VIEWPORT, viewport);
+	glGetDoublev(GL_MODELVIEW_MATRIX, mv);
+	glGetDoublev(GL_PROJECTION_MATRIX, pm);
+
+	GLdouble winX = 0;
+	GLdouble winY = 0;
+	GLdouble winZ = 0;
+
+	gluProject(point.x(), point.y(), point.z(), mv, pm, viewport, &winX, &winY, &winZ);
+
+	screenX = winX;
+	screenY = (double) m_height - winY;	// Flip because mouse (0,0) is at upper left corner
+
+	//std::cout << "Original point: " << point.x() << ", " << point.y() << ", " << point.z() << std::endl;
+	//std::cout << "Screen coordinates: " << screenX << ", " << screenY << std::endl;
 }
 
 float MiniGL::getZNear()

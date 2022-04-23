@@ -22,10 +22,12 @@ class ForceController {
         bool m_jumpPressed = false;
 
         typedef std::function<void(double&, double&)> MousePosFct;
-        static MousePosFct mousePosFunc;
+        typedef std::function<void(Vector3r, double&, double&)> WorldToScreenFct;
+        static MousePosFct mousePosFunc;    // Call to get the coordinates of the mouse onscreen
+        static WorldToScreenFct worldToScreenFunc;  // Call to convert a 3d world point to screen coords
 
     public:
-        int controllerObject = -1;   // Object to be moved by external force (index in rigidbody list)
+        int controlledObject = -1;   // Object to be moved by external force (index in rigidbody list)
 
         // Singleton
         static ForceController* getCurrent();
@@ -40,6 +42,7 @@ class ForceController {
         // Called when there's any input. True if the function wants to 'use up' this event
         // Need to be static so they can be set as callbacks
         static void setMousePosFunc(MousePosFct func) {mousePosFunc = func;}
+        static void setWorldToScreenFunc(WorldToScreenFct func) {worldToScreenFunc = func;}
         static bool mouseInput(int button, int action, int mods);
         static bool keyboardInput(int key, int scancode, int action, int mod);
 

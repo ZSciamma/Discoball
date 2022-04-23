@@ -137,6 +137,7 @@ int main( int argc, char **argv )
 
 	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
 	ForceController::setMousePosFunc(MiniGL::getMousePos);
+	ForceController::setWorldToScreenFunc(MiniGL::project);
 	Camera::getCurrent()->setControlledObject(0);
 	Camera::getCurrent()->setMoveFunc(MiniGL::move);
 

@@ -180,6 +180,7 @@ namespace PBD
 		static void setSelectionFunc(void(*func) (const Vector2i&, const Vector2i&, void*), void *clientData);
 		static void setMouseMoveFunc(int button, void(*func) (int, int, void*));
 		static void unproject(const int x, const int y, Vector3r &pos);
+		static void project(Vector3r point, double &screenX, double &screenY);
 		static float getZNear();
 		static float getZFar();
 		static void hsvToRgb(float h, float s, float v, float *rgb);
