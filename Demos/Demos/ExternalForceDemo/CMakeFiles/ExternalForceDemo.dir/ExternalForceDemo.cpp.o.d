@@ -546,6 +546,5 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.o
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStep.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Common/TweakBarParameters.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Simulation.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/ForceController.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/RigidBody.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Camera.h
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Camera.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.h

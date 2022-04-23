@@ -1,7 +1,8 @@
-Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStepController.cpp \
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o: \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.cpp \
  /usr/include/stdc-predef.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStepController.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/SimulationModel.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Common/Common.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -413,8 +414,6 @@ Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /usr/lib/gcc/x86_64-redhat-linux/11/include/float.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStep.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/SimulationModel.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
@@ -452,32 +451,15 @@ Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/Parameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/EnumParameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/VectorParameter.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/CollisionDetection.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/AABB.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeManager.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/PositionBasedDynamics/PositionBasedRigidBodyDynamics.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/PositionBasedDynamics/TimeIntegration.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/PositionBasedDynamics/PositionBasedDynamics.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Utils/Timing.h \
- /usr/include/c++/11/stack /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_stack.h /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/MiniGL.h \
+ /usr/include/eigen3/Eigen/Geometry \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Shader.h \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Utils/Logger.h \
- /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
- /usr/include/c++/11/x86_64-redhat-linux/bits/basic_file.h \
- /usr/include/c++/11/x86_64-redhat-linux/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/ctime \
- /usr/include/c++/11/iomanip /usr/include/c++/11/locale \
- /usr/include/c++/11/bits/locale_facets_nonio.h \
- /usr/include/c++/11/x86_64-redhat-linux/bits/time_members.h \
- /usr/include/c++/11/x86_64-redhat-linux/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/bits/parse_numbers.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/glfw/src/../deps/glad/gl.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/glfw/src/../deps/glad/khrplatform.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/AntTweakBar/include/AntTweakBar.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/SimulationModel.h

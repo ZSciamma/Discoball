@@ -35,6 +35,7 @@ endif()
 
 add_executable(ExternalForceDemo
 	  ExternalForceDemo.cpp
+	  PlayerController.cpp
 
 	  ../Common/TweakBarParameters.cpp
 	  ../Common/TweakBarParameters.h

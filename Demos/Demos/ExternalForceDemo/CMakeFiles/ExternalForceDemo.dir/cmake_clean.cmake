@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../../bin/ExternalForceDemo.pdb"
   "CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.o"
   "CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.o.d"
+  "CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o"
+  "CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o.d"
   "CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o"
   "CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o.d"
   "CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o"

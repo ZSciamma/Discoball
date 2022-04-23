@@ -83,10 +83,24 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.s"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/ExternalForceDemo.cpp -o CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.s
 
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o: ExternalForceDemo/PlayerController.cpp
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.cpp
+
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.i"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.cpp > CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.i
+
+Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.s"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/ExternalForceDemo/PlayerController.cpp -o CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.s
+
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o: Common/TweakBarParameters.cpp
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Common/TweakBarParameters.cpp
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.i: cmake_force
@@ -100,7 +114,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParam
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o: Common/DemoBase.cpp
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Common/DemoBase.cpp
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.i: cmake_force
@@ -114,7 +128,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o: ../extern/glfw/deps/glad_gl.c
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o -MF CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o.d -o CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/extern/glfw/deps/glad_gl.c
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.i: cmake_force
@@ -128,7 +142,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o: Visualization/MiniGL.cpp
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/MiniGL.cpp
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL.cpp.i: cmake_force
@@ -142,7 +156,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/MiniGL
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o: Visualization/Shader.cpp
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Shader.cpp
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader.cpp.i: cmake_force
@@ -156,7 +170,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Shader
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/flags.make
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o: Visualization/Camera.cpp
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o -MF CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o.d -o CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Visualization/Camera.cpp
 
 Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera.cpp.i: cmake_force
@@ -170,6 +184,7 @@ Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Visualization/Camera
 # Object files for target ExternalForceDemo
 ExternalForceDemo_OBJECTS = \
 "CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.o" \
+"CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o" \
 "CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o" \
 "CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o" \
 "CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o" \
@@ -181,6 +196,7 @@ ExternalForceDemo_OBJECTS = \
 ExternalForceDemo_EXTERNAL_OBJECTS =
 
 ../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/ExternalForceDemo.cpp.o
+../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/PlayerController.cpp.o
 ../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/TweakBarParameters.cpp.o
 ../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/Common/DemoBase.cpp.o
 ../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/__/__/extern/glfw/deps/glad_gl.c.o
@@ -203,7 +219,7 @@ ExternalForceDemo_EXTERNAL_OBJECTS =
 ../bin/ExternalForceDemo: /usr/lib64/libX11.so
 ../bin/ExternalForceDemo: ../lib/libPositionBasedDynamics.a
 ../bin/ExternalForceDemo: Demos/ExternalForceDemo/CMakeFiles/ExternalForceDemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../../../bin/ExternalForceDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable ../../../bin/ExternalForceDemo"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Demos/ExternalForceDemo && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ExternalForceDemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

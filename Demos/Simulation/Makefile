@@ -295,30 +295,6 @@ DistanceFieldCollisionDetection.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s
 .PHONY : DistanceFieldCollisionDetection.cpp.s
 
-ForceController.o: ForceController.cpp.o
-.PHONY : ForceController.o
-
-# target to build an object file
-ForceController.cpp.o:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o
-.PHONY : ForceController.cpp.o
-
-ForceController.i: ForceController.cpp.i
-.PHONY : ForceController.i
-
-# target to preprocess a source file
-ForceController.cpp.i:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.i
-.PHONY : ForceController.cpp.i
-
-ForceController.s: ForceController.cpp.s
-.PHONY : ForceController.s
-
-# target to generate assembly for a file
-ForceController.cpp.s:
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.s
-.PHONY : ForceController.cpp.s
-
 IDFactory.o: IDFactory.cpp.o
 .PHONY : IDFactory.o
 
@@ -487,6 +463,30 @@ TetModel.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.s
 .PHONY : TetModel.cpp.s
 
+Thrusters.o: Thrusters.cpp.o
+.PHONY : Thrusters.o
+
+# target to build an object file
+Thrusters.cpp.o:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o
+.PHONY : Thrusters.cpp.o
+
+Thrusters.i: Thrusters.cpp.i
+.PHONY : Thrusters.i
+
+# target to preprocess a source file
+Thrusters.cpp.i:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.i
+.PHONY : Thrusters.cpp.i
+
+Thrusters.s: Thrusters.cpp.s
+.PHONY : Thrusters.s
+
+# target to generate assembly for a file
+Thrusters.cpp.s:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.s
+.PHONY : Thrusters.cpp.s
+
 TimeManager.o: TimeManager.cpp.o
 .PHONY : TimeManager.o
 
@@ -611,9 +611,6 @@ help:
 	@echo "... DistanceFieldCollisionDetection.o"
 	@echo "... DistanceFieldCollisionDetection.i"
 	@echo "... DistanceFieldCollisionDetection.s"
-	@echo "... ForceController.o"
-	@echo "... ForceController.i"
-	@echo "... ForceController.s"
 	@echo "... IDFactory.o"
 	@echo "... IDFactory.i"
 	@echo "... IDFactory.s"
@@ -635,6 +632,9 @@ help:
 	@echo "... TetModel.o"
 	@echo "... TetModel.i"
 	@echo "... TetModel.s"
+	@echo "... Thrusters.o"
+	@echo "... Thrusters.i"
+	@echo "... Thrusters.s"
 	@echo "... TimeManager.o"
 	@echo "... TimeManager.i"
 	@echo "... TimeManager.s"

@@ -125,19 +125,19 @@ Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/DistanceFieldCollisionDetection.cpp -o CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s
 
-Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
-Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o: ../Simulation/ForceController.cpp
-Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o"
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o -MF CMakeFiles/Simulation.dir/ForceController.cpp.o.d -o CMakeFiles/Simulation.dir/ForceController.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/ForceController.cpp
+Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
+Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: ../Simulation/Thrusters.cpp
+Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o -MF CMakeFiles/Simulation.dir/Thrusters.cpp.o.d -o CMakeFiles/Simulation.dir/Thrusters.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.cpp
 
-Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Simulation.dir/ForceController.cpp.i"
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/ForceController.cpp > CMakeFiles/Simulation.dir/ForceController.cpp.i
+Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Simulation.dir/Thrusters.cpp.i"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.cpp > CMakeFiles/Simulation.dir/Thrusters.cpp.i
 
-Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Simulation.dir/ForceController.cpp.s"
-	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/ForceController.cpp -o CMakeFiles/Simulation.dir/ForceController.cpp.s
+Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Simulation.dir/Thrusters.cpp.s"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.cpp -o CMakeFiles/Simulation.dir/Thrusters.cpp.s
 
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o: ../Simulation/IDFactory.cpp
@@ -313,7 +313,7 @@ Simulation_OBJECTS = \
 "CMakeFiles/Simulation.dir/Constraints.cpp.o" \
 "CMakeFiles/Simulation.dir/CubicSDFCollisionDetection.cpp.o" \
 "CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o" \
-"CMakeFiles/Simulation.dir/ForceController.cpp.o" \
+"CMakeFiles/Simulation.dir/Thrusters.cpp.o" \
 "CMakeFiles/Simulation.dir/IDFactory.cpp.o" \
 "CMakeFiles/Simulation.dir/LineModel.cpp.o" \
 "CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o" \
@@ -334,7 +334,7 @@ Simulation_EXTERNAL_OBJECTS =
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/Constraints.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/CubicSDFCollisionDetection.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o
-../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/ForceController.cpp.o
+../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o

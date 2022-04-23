@@ -1,29 +1,60 @@
-#include "ForceController.h"
+#include "Thrusters.h"
+
+#include "RigidBody.h"
 
 using namespace std;
 
-ForceController* ForceController::current = nullptr;
-ForceController::MousePosFct ForceController::mousePosFunc = nullptr;
-ForceController::WorldToScreenFct ForceController::worldToScreenFunc = nullptr;
+Thrusters* Thrusters::current = nullptr;
 
-ForceController* ForceController::getCurrent() {
+Thrusters* Thrusters::getCurrent() {
     if (current == nullptr) {
-        current = new ForceController();
+        current = new Thrusters();
     }
     return current;
 }
 
-void ForceController::setCurrent(ForceController* controller) {
+void Thrusters::setCurrent(Thrusters* controller) {
     current = controller;
 }
 
-void ForceController::setControlledObject (int index) {
-    controlledObject = index;
+void Thrusters::setControlledObject (int index) {
+    m_controlledObj = index;
 }
 
+/*
+void Thrusters::setUpcomingPropulsion(Vector3r force) {
+    m_thrustersScheduled = true;
+    m_nextForce = force;
+}
+*/
+
+void Thrusters::applyPropulsion(SimulationModel &model, Vector3r force) {
+    // Try find the character
+    SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
+    if (m_controlledObj < 0 || m_controlledObj >= rb.size()) {
+        return;
+    }
+    Vector3r &acc = rb[m_controlledObj]->getAcceleration();
+
+    // Apply force
+    acc += force;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // Set the rigidbody's acceleration according to the force being applied on it
 // Called by the physics when it's ready for the force to be applied
-void ForceController::setExternalForceAcceleration(SimulationModel &model) {
+void Thrusters::setExternalForceAcceleration(SimulationModel &model) {
     
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
 
@@ -81,13 +112,15 @@ void ForceController::setExternalForceAcceleration(SimulationModel &model) {
     }
 }
 
-bool ForceController::mouseInput(int button, int action, int mods) {
+bool Thrusters::mouseInput(int button, int action, int mods) {
     if (action == 1) 
         return current->mousePressed(button, action, mods);
     return false;
 }
+*/
 
-bool ForceController::mousePressed(int button, int action, int mods) {
+/*
+bool Thrusters::mousePressed(int button, int action, int mods) {
     // Get current mouse position from GL;
     mousePosFunc(mouse_old_x, mouse_old_y);
 
@@ -96,8 +129,10 @@ bool ForceController::mousePressed(int button, int action, int mods) {
 
     return false;       // Pretend we don't want it so others can use it
 }
+*/
 
-bool ForceController::keyboardInput(int key, int scancode, int action, int mod) {
+/*
+bool Thrusters::keyboardInput(int key, int scancode, int action, int mod) {
     unsigned char c = key;
     if (action == 0) 
         return current->keyReleased(c);
@@ -106,7 +141,7 @@ bool ForceController::keyboardInput(int key, int scancode, int action, int mod) 
     return false;
 }
 
-bool ForceController::keyPressed(unsigned char key) {
+bool Thrusters::keyPressed(unsigned char key) {
     switch (key) {
         case 'A':
             m_leftPressed = true;
@@ -125,7 +160,7 @@ bool ForceController::keyPressed(unsigned char key) {
     return true;
 }
 
-bool ForceController::keyReleased(unsigned char key) {
+bool Thrusters::keyReleased(unsigned char key) {
     switch (key) {
         case 'A':
             m_leftPressed = false;
@@ -149,4 +184,4 @@ bool ForceController::keyReleased(unsigned char key) {
     }
     return true;
 }
-
+*/

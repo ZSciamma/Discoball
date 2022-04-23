@@ -18,8 +18,8 @@
 #include "Demos/Common/DemoBase.h"
 #include "Demos/Common/TweakBarParameters.h"
 #include "Simulation/Simulation.h"
-#include "Simulation/ForceController.h"
 #include "Demos/Visualization/Camera.h"
+#include "PlayerController.h"
 
 #define _USE_MATH_DEFINES
 #include "math.h"
@@ -136,11 +136,14 @@ int main( int argc, char **argv )
 	buildModel();
 
 	// Setup functions for character movement
-	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
-	ForceController::setMousePosFunc(MiniGL::getMousePos);
-	ForceController::setWorldToScreenFunc(MiniGL::project);
-	Camera::getCurrent()->setControlledObject(0);
-	Camera::getCurrent()->setMoveFunc(MiniGL::move);
+	PlayerController::getCurrent()->init(0);
+	
+
+	//Thrusters::getCurrent()->setControlledObject(0);	
+	//Thrusters::setMousePosFunc(MiniGL::getMousePos);
+	//Thrusters::setWorldToScreenFunc(MiniGL::project);
+	//Camera::getCurrent()->setControlledObject(0);
+	//Camera::getCurrent()->setMoveFunc(MiniGL::move);
 
 	base->createParameterGUI();
 	base->readParameters();
@@ -148,10 +151,10 @@ int main( int argc, char **argv )
 	// OpenGL
 	MiniGL::setClientIdleFunc (timeStep);
 	MiniGL::addKeyFunc('r', reset);
-	MiniGL::addMousePressFunc(ForceController::mouseInput);
-	//MiniGL::addKeyFunc('s', ForceController::inputLeft);
-	//MiniGL::addKeyFunc('d', ForceController::inputRight);
-	MiniGL::addKeyboardFunc(ForceController::keyboardInput);
+	MiniGL::addMousePressFunc(PlayerController::mousePressed);
+	//MiniGL::addKeyFunc('s', Thrusters::inputLeft);
+	//MiniGL::addKeyFunc('d', Thrusters::inputRight);
+	//MiniGL::addKeyboardFunc(Thrusters::keyPressed);
 	MiniGL::setClientSceneFunc(render);			
 	MiniGL::setViewport(40.0f, 0.1f, 500.0f, camPos, camLookat);
 	

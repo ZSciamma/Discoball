@@ -5,7 +5,7 @@
 #include <iostream>
 #include "PositionBasedDynamics/PositionBasedDynamics.h"
 #include "Utils/Timing.h"
-#include "ForceController.h"
+#include "Demos/ExternalForceDemo/PlayerController.h"							// THIS MIGHT BE A PROBLEM. WE CAN'T RUN OTHER DEMOS. MOVE PLAYERCONTROLLER TO SIMULATION
 
 using namespace PBD;
 using namespace std;
@@ -87,7 +87,7 @@ void TimeStepController::step(SimulationModel &model)
 	ParticleData &pd = model.getParticles();
 	OrientationData &od = model.getOrientations();
 
-	ForceController::getCurrent()->setExternalForceAcceleration(model);							// MAKE THIS MORE EFFICIENT!!
+	PlayerController::getCurrent()->applyRecoil(model);							// MAKE THIS MORE EFFICIENT!!
 
 	const int numBodies = (int)rb.size();
 
