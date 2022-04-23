@@ -1,5 +1,22 @@
-#include "BulletShooter.h"
+#include "Gun.h"
 
+#include "RigidBody.h"
+
+void Gun::shootBullet(SimulationModel &model, Vector3r bulletPos, Vector3r force) {
+    // Get next bullet
+    SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
+    Vector3r &pos = rb[1]->getPosition();
+
+    pos.x() = bulletPos.x();
+    pos.y() = bulletPos.y();
+    pos.z() = bulletPos.z();
+
+    Vector3r &acc = rb[1]->getAcceleration();
+    acc += force;
+}
+
+
+/*
 // Called by GL when the mouse is clicked
 bool BulletShooter:mouseInput() {
     // Prepare teleportation
@@ -8,9 +25,10 @@ bool BulletShooter:mouseInput() {
     //  we're going to teleport a bullet.
     return false; // ?
 }
+*/
 
 // Called by the physics when it's ready to teleport the bullet into place
-bool BulletShooter:actuateTeleportation() {
+
     // Choose the final location of the bullet (do this here or in the mouseInput function?)
 
     // Check if location is right? Otherwise maybe just don't create a bullet? Unclear
@@ -32,4 +50,3 @@ bool BulletShooter:actuateTeleportation() {
     //  the opposite direction? Would be good to have a Player class or something which 
     //  contains both BulletShooter and ForceController so we can just have the result
     //  of the calculations passed down
-}

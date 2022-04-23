@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Simulation.dir/CubicSDFCollisionDetection.cpp.o.d"
   "CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o"
   "CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o.d"
+  "CMakeFiles/Simulation.dir/Gun.cpp.o"
+  "CMakeFiles/Simulation.dir/Gun.cpp.o.d"
   "CMakeFiles/Simulation.dir/IDFactory.cpp.o"
   "CMakeFiles/Simulation.dir/IDFactory.cpp.o.d"
   "CMakeFiles/Simulation.dir/LineModel.cpp.o"

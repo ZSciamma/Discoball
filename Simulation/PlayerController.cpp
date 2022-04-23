@@ -1,6 +1,7 @@
 #include "PlayerController.h"
 
 #include "Thrusters.h"
+#include "Gun.h"
 
 PlayerController* PlayerController::current = nullptr;
 PlayerController::MousePosFct PlayerController::mousePosFunc = nullptr;
@@ -39,12 +40,20 @@ void PlayerController::applyRecoil(SimulationModel &model) {
     }
     m_mousePressed = false;
     
-    Vector3r force = calculateRecoil(model);
+    Vector3r bulletPos;
+    Vector3r force = calculateRecoil(model, bulletPos);
 
     Thrusters::getCurrent()->applyPropulsion(model, force);
+    Gun::shootBullet(model, bulletPos, -force);
 }
 
-Vector3r PlayerController::calculateRecoil(SimulationModel &model) {
+/*
+void PlayerController::shootBullet(SimulationModel &model) {
+    
+}
+*/
+
+Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bulletPos) {
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
 
     // Try find the character
@@ -76,6 +85,17 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model) {
         yFactor = -yFactor;
     double magnitude = 1000;
     Vector3r force = Vector3r(magnitude*xFactor, magnitude*yFactor, 0);
+
+
+    // Calculate bullet position
+    double worldDist = 1;
+    Vector3r bulletLocVector = worldDist * Vector3r(-xFactor, -yFactor, 0);
+    Vector3r bulletWorldPos = playerWorldPos + bulletLocVector;
+    std::cout << "Player world pos: " << playerWorldPos.x() << ", " << playerWorldPos.y() << ", " << playerWorldPos.z() << std::endl;
+    std::cout << "Bullet world pos: " << bulletWorldPos.x() << ", " << bulletWorldPos.y() << ", " << bulletWorldPos.z() << std::endl;
+    bulletPos.x() = bulletWorldPos.x();
+    bulletPos.y() = bulletWorldPos.y();
+    bulletPos.z() = bulletWorldPos.z();
 
     return force;
 }

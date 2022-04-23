@@ -10,10 +10,10 @@ using namespace PBD;
 //  Force might be applied through some external input
 class Thrusters {
     private:
-        static Thrusters* current;
+        static Thrusters* current;                                                  // DOESN'T NEED TO BE A SINGLETON! CAN PROBABLY JUST BE STATIC!!
 
         int m_controlledObj = -1;
-        bool m_thrustersScheduled = false;
+        //bool m_thrustersScheduled = false;
 
     public:
         // Singleton
@@ -23,9 +23,9 @@ class Thrusters {
         void setControlledObject (int index);
 
         // Recoil
-        //void setUpcomingPropulsion(Vector3r force);  // Schedules a recoil force next time the physics comes around
         void applyPropulsion(SimulationModel &model, Vector3r force);  // Physics is ready for force to be applied
 };
+
 
         //int m_xDirection = 0;   // -1 if we're going left, 1 if right
 
@@ -46,6 +46,7 @@ class Thrusters {
         /*
         // Set the rigidbody's acceleration according to the force being applied on it
         void setExternalForceAcceleration(SimulationModel &model);
+        //void setUpcomingPropulsion(Vector3r force);  // Schedules a recoil force next time the physics comes around
 
         // OpenGL callbacks
         // Called when there's any input. True if the function wants to 'use up' this event

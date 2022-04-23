@@ -2,6 +2,7 @@
 #define __PLAYER_CONTROLLER__
 
 //#include "Simulation/BulletShooter.h"
+#include "Common/Common.h"
 #include "SimulationModel.h"
 
 using namespace PBD;
@@ -24,7 +25,7 @@ class PlayerController {
         static MousePosFct mousePosFunc;    // Call to get the coordinates of the mouse onscreen
         static WorldToScreenFct worldToScreenFunc;  // Call to convert a 3d world point to screen coords
 
-        Vector3r calculateRecoil(SimulationModel &model);
+        Vector3r calculateRecoil(SimulationModel &model, Vector3r &bulletPos);
 
     public:
         // Singleton
@@ -44,6 +45,7 @@ class PlayerController {
         
         // Called by the physics (TimeStepController) when it's ready for the recoil
         void applyRecoil(SimulationModel &model);
+        // void shootBullet(SimulationModel &model);
 };
 
 #endif

@@ -125,10 +125,24 @@ Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s: cmak
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/DistanceFieldCollisionDetection.cpp -o CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s
 
+Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
+Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o: ../Simulation/Gun.cpp
+Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o -MF CMakeFiles/Simulation.dir/Gun.cpp.o.d -o CMakeFiles/Simulation.dir/Gun.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Gun.cpp
+
+Simulation/CMakeFiles/Simulation.dir/Gun.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Simulation.dir/Gun.cpp.i"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Gun.cpp > CMakeFiles/Simulation.dir/Gun.cpp.i
+
+Simulation/CMakeFiles/Simulation.dir/Gun.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Simulation.dir/Gun.cpp.s"
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Gun.cpp -o CMakeFiles/Simulation.dir/Gun.cpp.s
+
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o: ../Simulation/IDFactory.cpp
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o -MF CMakeFiles/Simulation.dir/IDFactory.cpp.o.d -o CMakeFiles/Simulation.dir/IDFactory.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/IDFactory.cpp
 
 Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.i: cmake_force
@@ -142,7 +156,7 @@ Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o: ../Simulation/LineModel.cpp
 Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o -MF CMakeFiles/Simulation.dir/LineModel.cpp.o.d -o CMakeFiles/Simulation.dir/LineModel.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/LineModel.cpp
 
 Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.i: cmake_force
@@ -156,7 +170,7 @@ Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o: ../Simulation/NeighborhoodSearchSpatialHashing.cpp
 Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o -MF CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o.d -o CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/NeighborhoodSearchSpatialHashing.cpp
 
 Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.i: cmake_force
@@ -170,7 +184,7 @@ Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.s: cma
 Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o: ../Simulation/PlayerController.cpp
 Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o -MF CMakeFiles/Simulation.dir/PlayerController.cpp.o.d -o CMakeFiles/Simulation.dir/PlayerController.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/PlayerController.cpp
 
 Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.i: cmake_force
@@ -184,7 +198,7 @@ Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o: ../Simulation/RigidBodyGeometry.cpp
 Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o -MF CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o.d -o CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/RigidBodyGeometry.cpp
 
 Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.i: cmake_force
@@ -198,7 +212,7 @@ Simulation/CMakeFiles/Simulation.dir/RigidBodyGeometry.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o: ../Simulation/Simulation.cpp
 Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.o -MF CMakeFiles/Simulation.dir/Simulation.cpp.o.d -o CMakeFiles/Simulation.dir/Simulation.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Simulation.cpp
 
 Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.i: cmake_force
@@ -212,7 +226,7 @@ Simulation/CMakeFiles/Simulation.dir/Simulation.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o: ../Simulation/SimulationModel.cpp
 Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.o -MF CMakeFiles/Simulation.dir/SimulationModel.cpp.o.d -o CMakeFiles/Simulation.dir/SimulationModel.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/SimulationModel.cpp
 
 Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.i: cmake_force
@@ -226,7 +240,7 @@ Simulation/CMakeFiles/Simulation.dir/SimulationModel.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o: ../Simulation/TetModel.cpp
 Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.o -MF CMakeFiles/Simulation.dir/TetModel.cpp.o.d -o CMakeFiles/Simulation.dir/TetModel.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TetModel.cpp
 
 Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.i: cmake_force
@@ -240,7 +254,7 @@ Simulation/CMakeFiles/Simulation.dir/TetModel.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o: ../Simulation/TimeManager.cpp
 Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.o -MF CMakeFiles/Simulation.dir/TimeManager.cpp.o.d -o CMakeFiles/Simulation.dir/TimeManager.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeManager.cpp
 
 Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.i: cmake_force
@@ -254,7 +268,7 @@ Simulation/CMakeFiles/Simulation.dir/TimeManager.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o: ../Simulation/TimeStep.cpp
 Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.o -MF CMakeFiles/Simulation.dir/TimeStep.cpp.o.d -o CMakeFiles/Simulation.dir/TimeStep.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStep.cpp
 
 Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.i: cmake_force
@@ -268,7 +282,7 @@ Simulation/CMakeFiles/Simulation.dir/TimeStep.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: ../Simulation/TimeStepController.cpp
 Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.o -MF CMakeFiles/Simulation.dir/TimeStepController.cpp.o.d -o CMakeFiles/Simulation.dir/TimeStepController.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TimeStepController.cpp
 
 Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.i: cmake_force
@@ -282,7 +296,7 @@ Simulation/CMakeFiles/Simulation.dir/TimeStepController.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o: ../Simulation/TriangleModel.cpp
 Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.o -MF CMakeFiles/Simulation.dir/TriangleModel.cpp.o.d -o CMakeFiles/Simulation.dir/TriangleModel.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/TriangleModel.cpp
 
 Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.i: cmake_force
@@ -296,7 +310,7 @@ Simulation/CMakeFiles/Simulation.dir/TriangleModel.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: ../Simulation/Thrusters.cpp
 Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.o -MF CMakeFiles/Simulation.dir/Thrusters.cpp.o.d -o CMakeFiles/Simulation.dir/Thrusters.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.cpp
 
 Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.i: cmake_force
@@ -310,7 +324,7 @@ Simulation/CMakeFiles/Simulation.dir/Thrusters.cpp.s: cmake_force
 Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o: Simulation/CMakeFiles/Simulation.dir/flags.make
 Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o: ../Simulation/BoundingSphereHierarchy.cpp
 Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o: Simulation/CMakeFiles/Simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && /usr/lib64/ccache/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o -MF CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o.d -o CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o -c /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/BoundingSphereHierarchy.cpp
 
 Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.i: cmake_force
@@ -327,6 +341,7 @@ Simulation_OBJECTS = \
 "CMakeFiles/Simulation.dir/Constraints.cpp.o" \
 "CMakeFiles/Simulation.dir/CubicSDFCollisionDetection.cpp.o" \
 "CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o" \
+"CMakeFiles/Simulation.dir/Gun.cpp.o" \
 "CMakeFiles/Simulation.dir/IDFactory.cpp.o" \
 "CMakeFiles/Simulation.dir/LineModel.cpp.o" \
 "CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o" \
@@ -349,6 +364,7 @@ Simulation_EXTERNAL_OBJECTS =
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/Constraints.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/CubicSDFCollisionDetection.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.o
+../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/IDFactory.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/LineModel.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/NeighborhoodSearchSpatialHashing.cpp.o
@@ -365,7 +381,7 @@ Simulation_EXTERNAL_OBJECTS =
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/BoundingSphereHierarchy.cpp.o
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/build.make
 ../lib/libSimulation.a: Simulation/CMakeFiles/Simulation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library ../../lib/libSimulation.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX static library ../../lib/libSimulation.a"
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && $(CMAKE_COMMAND) -P CMakeFiles/Simulation.dir/cmake_clean_target.cmake
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/Simulation && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Simulation.dir/link.txt --verbose=$(VERBOSE)
 

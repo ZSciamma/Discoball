@@ -21,13 +21,6 @@ void Thrusters::setControlledObject (int index) {
     m_controlledObj = index;
 }
 
-/*
-void Thrusters::setUpcomingPropulsion(Vector3r force) {
-    m_thrustersScheduled = true;
-    m_nextForce = force;
-}
-*/
-
 void Thrusters::applyPropulsion(SimulationModel &model, Vector3r force) {
     // Try find the character
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
@@ -46,10 +39,12 @@ void Thrusters::applyPropulsion(SimulationModel &model, Vector3r force) {
 
 
 
-
-
-
-
+/*
+void Thrusters::setUpcomingPropulsion(Vector3r force) {
+    m_thrustersScheduled = true;
+    m_nextForce = force;
+}
+*/
 
 /*
 // Set the rigidbody's acceleration according to the force being applied on it

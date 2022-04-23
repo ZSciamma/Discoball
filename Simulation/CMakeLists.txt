@@ -8,6 +8,7 @@ add_library(Simulation
 		CubicSDFCollisionDetection.h
 		DistanceFieldCollisionDetection.cpp
 		DistanceFieldCollisionDetection.h
+		Gun.cpp
 		IDFactory.cpp
 		IDFactory.h
 		LineModel.cpp

@@ -295,6 +295,30 @@ DistanceFieldCollisionDetection.cpp.s:
 	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/DistanceFieldCollisionDetection.cpp.s
 .PHONY : DistanceFieldCollisionDetection.cpp.s
 
+Gun.o: Gun.cpp.o
+.PHONY : Gun.o
+
+# target to build an object file
+Gun.cpp.o:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Gun.cpp.o
+.PHONY : Gun.cpp.o
+
+Gun.i: Gun.cpp.i
+.PHONY : Gun.i
+
+# target to preprocess a source file
+Gun.cpp.i:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Gun.cpp.i
+.PHONY : Gun.cpp.i
+
+Gun.s: Gun.cpp.s
+.PHONY : Gun.s
+
+# target to generate assembly for a file
+Gun.cpp.s:
+	cd /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos && $(MAKE) $(MAKESILENT) -f Simulation/CMakeFiles/Simulation.dir/build.make Simulation/CMakeFiles/Simulation.dir/Gun.cpp.s
+.PHONY : Gun.cpp.s
+
 IDFactory.o: IDFactory.cpp.o
 .PHONY : IDFactory.o
 
@@ -635,6 +659,9 @@ help:
 	@echo "... DistanceFieldCollisionDetection.o"
 	@echo "... DistanceFieldCollisionDetection.i"
 	@echo "... DistanceFieldCollisionDetection.s"
+	@echo "... Gun.o"
+	@echo "... Gun.i"
+	@echo "... Gun.s"
 	@echo "... IDFactory.o"
 	@echo "... IDFactory.i"
 	@echo "... IDFactory.s"

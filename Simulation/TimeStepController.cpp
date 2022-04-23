@@ -88,6 +88,7 @@ void TimeStepController::step(SimulationModel &model)
 	OrientationData &od = model.getOrientations();
 
 	PlayerController::getCurrent()->applyRecoil(model);							// MAKE THIS MORE EFFICIENT!!
+	//PlayerController::getCurrent()->shootBullet(model);
 
 	const int numBodies = (int)rb.size();
 
