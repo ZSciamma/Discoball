@@ -121,6 +121,38 @@
 			"collisionObjectScale": [2,2,2]
 		},
 		{
+			"id": 5,
+			"isVisible": 1,
+			"geometryFile": "../models/rigidBodies/sphere_3sub.obj",
+			"flatShading": false,
+			"isDynamic": 1, 
+			"density": 5000, 
+			"translation": [5,6,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0.0,
+			"scale": [1,1,1],
+			"restitution" : 0.1,
+			"friction" : 0.3,
+			"collisionObjectType": 2,
+			"collisionObjectScale": [1,1,1]	
+		},
+		{
+			"id": 5,
+			"isVisible": 1,
+			"geometryFile": "../models/rigidBodies/sphere_3sub.obj",
+			"flatShading": false,
+			"isDynamic": 1, 
+			"density": 5000, 
+			"translation": [5,5,0],
+			"rotationAxis": [1, 0, 0],
+			"rotationAngle": 0.0,
+			"scale": [1,1,1],
+			"restitution" : 0.1,
+			"friction" : 0.3,
+			"collisionObjectType": 2,
+			"collisionObjectScale": [1,1,1]	
+		},
+		{
 			"id": 2,
 			"geometryFile": "../models/cube.obj",
 			"flatShading": true,

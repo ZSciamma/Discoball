@@ -90,7 +90,7 @@ bool ForceController::mouseInput(int button, int action, int mods) {
 bool ForceController::mousePressed(int button, int action, int mods) {
     // Get current mouse position from GL;
     mousePosFunc(mouse_old_x, mouse_old_y);
-    
+
     // Set m_mousePressed for next time physics comes around
     m_mousePressed = true;
 

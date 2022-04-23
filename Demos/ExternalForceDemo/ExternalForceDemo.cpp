@@ -135,6 +135,7 @@ int main( int argc, char **argv )
 
 	buildModel();
 
+	// Setup functions for character movement
 	ForceController::getCurrent()->setControlledObject(0);	// The cube character in GameLevelScene.json. Not id, but order of creation in json file.
 	ForceController::setMousePosFunc(MiniGL::getMousePos);
 	ForceController::setWorldToScreenFunc(MiniGL::project);
