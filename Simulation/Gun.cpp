@@ -72,8 +72,3 @@ bool BulletShooter:mouseInput() {
     //  frames for the cube to be shot away, which we know it will be unless it's against
     //  a rock and a hard place or something, and only then (a couple of frames later)
     //  put the bullet where the cube used to be, and have it shoot in the opposite direction.
-
-    // Also can we get the force from the ForceController so we can just throw the bullet in
-    //  the opposite direction? Would be good to have a Player class or something which 
-    //  contains both BulletShooter and ForceController so we can just have the result
-    //  of the calculations passed down

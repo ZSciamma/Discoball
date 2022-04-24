@@ -33,7 +33,7 @@ bool PlayerController::mousePressed(int button, int action, int mods) {
 
 // Called by the physics loop once it's ready for us to add recoil
 //  Since the caller provides the SimulationModel, we can't do these
-//  calculations until now.
+//  calculations until now (actually this is untrue because we could pass the model in at the start)                    SHOULD WE CHANGE THIS THEN?
 void PlayerController::applyRecoil(SimulationModel &model) {
     if (!m_mousePressed) {
         return;

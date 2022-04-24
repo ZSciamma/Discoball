@@ -186,6 +186,7 @@ namespace PBD
 		static void hsvToRgb(float h, float s, float v, float *rgb);
 		static void rgbToHsv(float r, float g, float b, float *hsv);
 		static int getModifierKey() { return modifier_key; }
+		//static void getEyePoint(double &eyeX, double &eyeY, double &eyeZ);
 
 		static void addReshapeFunc(ReshapeFct func) { m_reshapeFct.push_back(func); }
 		static std::vector<ReshapeFct> &getReshapeFunc() { return m_reshapeFct; }

@@ -425,6 +425,25 @@ void MiniGL::setViewport(float pfovy, float pznear, float pzfar, const Vector3r 
 	glLoadIdentity ();
 }
 
+/*
+void MiniGL::getEyePoint(double &eyeX, double &eyeY, double &eyeZ) {
+	GLint viewport[4];
+	GLdouble mv[16], pm[16];
+	glGetIntegerv(GL_VIEWPORT, viewport);
+	glGetDoublev(GL_MODELVIEW_MATRIX, mv);
+	glGetDoublev(GL_PROJECTION_MATRIX, pm);
+
+	// for (int i = 0; i < 16; i++) {
+	// 	std::cout << "Value " << i <<": " << mv[i] << std::endl;
+	// }
+	// std::cout << std::endl;
+
+	eyeX = -mv[12];
+	eyeY = -mv[13];
+	eyeZ = -mv[14];
+}
+*/
+
 void MiniGL::setViewport(float pfovy, float pznear, float pzfar)
 {
 	fovy = pfovy;

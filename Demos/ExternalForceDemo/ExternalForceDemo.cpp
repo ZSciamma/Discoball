@@ -198,6 +198,8 @@ int main( int argc, char **argv )
 	TwAddVarRW(MiniGL::getTweakBar(), "ExportOBJ", TW_TYPE_BOOL32, &enableExportOBJ, " label='Export OBJ'");
 	TwAddVarRW(MiniGL::getTweakBar(), "ExportFPS", TW_TYPE_UINT32, &exportFPS, " label='Export FPS'");
 
+	Camera::getCurrent()->init(model, 0);
+
 	MiniGL::mainLoop();
 
 	base->cleanup();
