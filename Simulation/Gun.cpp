@@ -2,17 +2,44 @@
 
 #include "RigidBody.h"
 
+int Gun::firstBullet = 1;
+int Gun::curBullet = Gun::firstBullet;
+int Gun::numBullets = 5;
+
 void Gun::shootBullet(SimulationModel &model, Vector3r bulletPos, Vector3r force) {
+    if (curBullet >= firstBullet + numBullets)
+        curBullet = firstBullet;
+
     // Get next bullet
-    SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
-    Vector3r &pos = rb[1]->getPosition();
+    //SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
+    RigidBody *bullet = model.getRigidBodies()[curBullet];
+    curBullet++;
+
+    Vector3r &pos = bullet->getPosition();
 
     pos.x() = bulletPos.x();
     pos.y() = bulletPos.y();
     pos.z() = bulletPos.z();
 
-    Vector3r &acc = rb[1]->getAcceleration();
-    acc += force;
+    std::cout << "New bullet pos: " << pos.x() << ", " << pos.y() << ", " << pos.z() << std::endl;
+
+    // Clear velocity and acceleration in case bullet happened to be moving
+    Vector3r &acc = bullet->getAcceleration();
+    acc.x() = 0;
+    acc.y() = 0;
+    acc.z() = 0;
+
+    Vector3r &vel = bullet->getVelocity();
+    vel.x() = 0;
+    vel.y() = 0;
+    vel.z() = 0;
+
+    // Set mass, because bullets are made static at the start
+    bullet->setMass(100.0);
+    
+    std::cout << "Acceleration before: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
+    acc += force * 4;
+    std::cout << "Acceleration after: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
 }
 
 
