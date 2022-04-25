@@ -572,6 +572,9 @@ void MiniGL::initTweakBar()
 	TwDefine(" GLOBAL help='MiniGL TweakBar.' "); // Message added to the help bar.
 	//TwDefine(" TweakBar size='300 900' valueswidth=120 position='5 5' color='96 200 224' text=dark "); // change default tweak bar size and color
 	TwDefine(" TweakBar size='300 900' valueswidth=120 position='5 5'"); // change default tweak bar size and color
+
+	// Hide the tweak bar... (freezes the game))
+	//TwDefine(" TweakBar visible=false ");
 }
 
 void MiniGL::initTweakBarParameters()
@@ -1087,8 +1090,8 @@ void MiniGL::mainLoop()
 		if (scenefunc != nullptr)
 			scenefunc();
 
-		TwDraw();  // draw the tweak bar(s)
-		//movieWriter->addFrameGL();
+		//TwDraw();  // draw the tweak bar(s)							// UNCOMMENT THIS TO UNHIDE THE TWEAK BAR!
+		movieWriter->addFrameGL();
 
 		glfwSwapBuffers(m_glfw_window);
 		//glFlush();
@@ -1102,7 +1105,7 @@ void MiniGL::mainLoop()
 	TwTerminate();
 	glfwTerminate();
 
-	//movieWriter->writeMovie("~/Documents/movies/demo_clip.mpeg");
+	movieWriter->writeMovie("~/Documents/movies/demo_clip.mp4");		// Saves frames to Documents/ppms
 
 	destroy();
 }

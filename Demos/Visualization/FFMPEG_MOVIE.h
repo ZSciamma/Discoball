@@ -35,7 +35,7 @@ public:
     _width = width;//-1;
     _height = height;//-1;
     _totalFrames = 0;
-    _fps = 30;
+    _fps = 60;
   };
 
   ~FFMPEG_MOVIE() {
@@ -84,6 +84,7 @@ public:
     }
     */
 
+    /*
     // Flip frames buffer (the image is currently upside down)
     for (int curRow = 0; curRow < _height/2; curRow++)
     {
@@ -96,6 +97,7 @@ public:
             Pixels[curPosition + offset] = temp;
         } 
     }
+    */
 
     _frames.push_back(Pixels);
 
@@ -143,11 +145,10 @@ public:
 
     
     // call FFMPEG
-    string ffmpeg("~/Documents/Tools/ffmpeg/ffmpeg -framerate 60 -i ../../../ppms/frame_%04d.ppm -pix_fmt yuv420p -vf vflip -vcodec libx264 -y -b:v 20000k ");
+    string ffmpeg("~/Documents/Tools/ffmpeg-git-20220422-amd64-static/ffmpeg -framerate 60 -i ../../../ppms/frame_%04d.ppm -pix_fmt yuv420p -vf vflip -vcodec libx264 -y -b:v 20000k ");
     ffmpeg = ffmpeg + string(moviename); 
     system(ffmpeg.c_str());
 
-    /*
     // delete all the PPM files
     cout << " Cleaning up ... " << flush;
     for (unsigned int x = 0; x < _frames.size(); x++)
@@ -157,7 +158,6 @@ public:
       string rm("rm " + std::string(filename));
       system(rm.c_str());
     }
-    */
     
     cout << " done. " << endl;
   };
@@ -176,7 +176,8 @@ public:
     }
 
     char buffer[1024];
-    sprintf(buffer, "~/Documents/Tools/ffmpeg -r 60 -f rawvideo -pix_fmt rgba -s %ix%i -i - ", _width, _height);
+    //sprintf(buffer, "~/Documents/Tools/ffmpeg-git-20220422-amd64-static/ffmpeg -r 60 -f rawvideo -pix_fmt rgba -s %ix%i -i - ", _width, _height);
+    sprintf(buffer, "~/Documents/Tools/ffmpeg-git-20220422-amd64-static/ffmpeg -r 60 -f rawvideo -pix_fmt rgba -s %ix%i -i - ", _width, _height);
     string ffmpegCmd = string(buffer) + string("-threads 0 -preset fast -y -pix_fmt yuv420p -crf 21 -vf vflip -vcodec libx264 ");
     ffmpegCmd = ffmpegCmd + string(moviename);
 
