@@ -5,7 +5,7 @@
 #include <iostream>
 #include "PositionBasedDynamics/PositionBasedDynamics.h"
 #include "Utils/Timing.h"
-#include "Simulation/PlayerController.h"							// THIS MIGHT BE A PROBLEM. WE CAN'T RUN OTHER DEMOS. MOVE PLAYERCONTROLLER TO SIMULATION
+#include "Simulation/PlayerController.h"							
 
 using namespace PBD;
 using namespace std;
@@ -199,6 +199,7 @@ void TimeStepController::step(SimulationModel &model)
 
 	velocityConstraintProjection(model);
 
+	// Just if we have joints in the scene
 	//////////////////////////////////////////////////////////////////////////
 	// update motor joint targets
 	//////////////////////////////////////////////////////////////////////////

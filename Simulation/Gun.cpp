@@ -21,7 +21,7 @@ void Gun::shootBullet(SimulationModel &model, Vector3r bulletPos, Vector3r force
     pos.y() = bulletPos.y();
     pos.z() = bulletPos.z();
 
-    std::cout << "New bullet pos: " << pos.x() << ", " << pos.y() << ", " << pos.z() << std::endl;
+    //std::cout << "New bullet pos: " << pos.x() << ", " << pos.y() << ", " << pos.z() << std::endl;
 
     // Clear velocity and acceleration in case bullet happened to be moving
     Vector3r &acc = bullet->getAcceleration();
@@ -37,9 +37,9 @@ void Gun::shootBullet(SimulationModel &model, Vector3r bulletPos, Vector3r force
     // Set mass, because bullets are made static at the start
     bullet->setMass(100.0);
     
-    std::cout << "Acceleration before: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
-    acc += force * 4;
-    std::cout << "Acceleration after: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
+    //std::cout << "Acceleration before: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
+    acc += force*4;
+    //std::cout << "Acceleration after: " << acc.x() << ", " << acc.y() << ", " << acc.z() << std::endl;
 }
 
 

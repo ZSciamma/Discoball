@@ -338,7 +338,7 @@ void initTetModelConstraints()
 	if (solidSimulationMethod == 5)
 		solidStiffness = 100000;
 
-	volumeStiffness = 1;
+	volumeStiffness = 10;
 	if (solidSimulationMethod == 5)
 		volumeStiffness = 100000;
 	for (unsigned int cm = 0; cm < model->getTetModels().size(); cm++)

@@ -91,8 +91,8 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bul
     double worldDist = 1;
     Vector3r bulletLocVector = worldDist * Vector3r(-xFactor, -yFactor, 0);
     Vector3r bulletWorldPos = playerWorldPos + bulletLocVector;
-    std::cout << "Player world pos: " << playerWorldPos.x() << ", " << playerWorldPos.y() << ", " << playerWorldPos.z() << std::endl;
-    std::cout << "Bullet world pos: " << bulletWorldPos.x() << ", " << bulletWorldPos.y() << ", " << bulletWorldPos.z() << std::endl;
+    //std::cout << "Player world pos: " << playerWorldPos.x() << ", " << playerWorldPos.y() << ", " << playerWorldPos.z() << std::endl;
+    //std::cout << "Bullet world pos: " << bulletWorldPos.x() << ", " << bulletWorldPos.y() << ", " << bulletWorldPos.z() << std::endl;
     bulletPos.x() = bulletWorldPos.x();
     bulletPos.y() = bulletWorldPos.y();
     bulletPos.z() = bulletWorldPos.z();
