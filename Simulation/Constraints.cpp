@@ -239,6 +239,7 @@ bool HingeJoint::solvePositionConstraint(SimulationModel &model, const unsigned 
 
 	RigidBody &rb1 = *rb[m_bodies[0]];
 	RigidBody &rb2 = *rb[m_bodies[1]];
+	
 
 	Vector3r corr_x1, corr_x2;
 	Quaternionr corr_q1, corr_q2;

@@ -149,6 +149,7 @@ public:
     ffmpeg = ffmpeg + string(moviename); 
     system(ffmpeg.c_str());
 
+  /*
     // delete all the PPM files
     cout << " Cleaning up ... " << flush;
     for (unsigned int x = 0; x < _frames.size(); x++)
@@ -159,6 +160,7 @@ public:
       system(rm.c_str());
     }
     
+    */
     cout << " done. " << endl;
   };
 

@@ -1,7 +1,7 @@
 #include "PlayerController.h"
 
 #include "Thrusters.h"
-#include "Gun.h"
+#include "Cannon.h"
 
 PlayerController* PlayerController::current = nullptr;
 PlayerController::MousePosFct PlayerController::mousePosFunc = nullptr;
@@ -33,7 +33,8 @@ bool PlayerController::mousePressed(int button, int action, int mods) {
 
 // Called by the physics loop once it's ready for us to add recoil
 //  Since the caller provides the SimulationModel, we can't do these
-//  calculations until now (actually this is untrue because we could pass the model in at the start)                    SHOULD WE CHANGE THIS THEN?
+//  calculations until now (actually this is untrue because we could pass the model in at the start)
+// Maybe we should change this in the future, then.
 void PlayerController::applyRecoil(SimulationModel &model) {
     if (!m_mousePressed) {
         return;
@@ -44,14 +45,8 @@ void PlayerController::applyRecoil(SimulationModel &model) {
     Vector3r force = calculateRecoil(model, bulletPos);
 
     Thrusters::getCurrent()->applyPropulsion(model, force);
-    Gun::shootBullet(model, bulletPos, -force);
+    Cannon::shootBullet(model, bulletPos, -force);
 }
-
-/*
-void PlayerController::shootBullet(SimulationModel &model) {
-    
-}
-*/
 
 Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bulletPos) {
     SimulationModel::RigidBodyVector &rb = model.getRigidBodies();
@@ -61,12 +56,12 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bul
         return Vector3r(0, 0, 0);
     }
 
-    Vector3r playerWorldPos = rb[m_playerObj]->getPosition();                      // IS THIS ACCURATE? MAYBE THIS IS NOT WHAT THE PLAYER SEES! WHAT IF THE CALLBACK INTERRUPTED SOME PHYSICS, AND IT'S MOVED SINCE?
+    // This might not be accurate. Maybe the callback interrupted some physics,
+    //  and this is not what the player sees because it's moved since
+    Vector3r playerWorldPos = rb[m_playerObj]->getPosition();                      
     double playerScreenPosX, playerScreenPosY;
 
     worldToScreenFunc(playerWorldPos, playerScreenPosX, playerScreenPosY);
-    //std::cout << "Mouse position: " << oldMouseX << ", " << oldMouseY << std::endl;
-    //std::cout << "Player position: " << playerScreenPosX << ", " << playerScreenPosY << std::endl;
 
     // Calculate angle between mouse and character
     double xDist = oldMouseX - playerScreenPosX;
@@ -74,7 +69,6 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bul
     if (xDist == 0)
         xDist = 0.1;
     double angle = atan(yDist / xDist);
-    //cout << "angle" << angle << endl;
 
     // Calculate force in each direction
     double xFactor = cos(angle);
@@ -91,8 +85,7 @@ Vector3r PlayerController::calculateRecoil(SimulationModel &model, Vector3r &bul
     double worldDist = 1;
     Vector3r bulletLocVector = worldDist * Vector3r(-xFactor, -yFactor, 0);
     Vector3r bulletWorldPos = playerWorldPos + bulletLocVector;
-    //std::cout << "Player world pos: " << playerWorldPos.x() << ", " << playerWorldPos.y() << ", " << playerWorldPos.z() << std::endl;
-    //std::cout << "Bullet world pos: " << bulletWorldPos.x() << ", " << bulletWorldPos.y() << ", " << bulletWorldPos.z() << std::endl;
+
     bulletPos.x() = bulletWorldPos.x();
     bulletPos.y() = bulletWorldPos.y();
     bulletPos.z() = bulletWorldPos.z();

@@ -1,12 +1,12 @@
-#ifndef __GUN__
-#define __GUN__
+#ifndef __CANNON_H__
+#define __CANNON_H__
 
 #include "Common/Common.h"
 #include "SimulationModel.h"
 
 using namespace PBD;
 
-class Gun {
+class Cannon {
 
         static int curBullet;
         static int firstBullet; // Index of the first bullet. Not id, but order of creation in json

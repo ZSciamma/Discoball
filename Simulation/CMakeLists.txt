@@ -1,5 +1,7 @@
 add_library(Simulation
 		AABB.h
+		Cannon.cpp
+		Cannon.h
 		CollisionDetection.cpp
 		CollisionDetection.h
 		Constraints.cpp
@@ -8,7 +10,6 @@ add_library(Simulation
 		CubicSDFCollisionDetection.h
 		DistanceFieldCollisionDetection.cpp
 		DistanceFieldCollisionDetection.h
-		Gun.cpp
 		IDFactory.cpp
 		IDFactory.h
 		LineModel.cpp

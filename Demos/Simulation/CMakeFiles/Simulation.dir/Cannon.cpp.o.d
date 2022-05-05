@@ -1,7 +1,7 @@
-Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o: \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/PlayerController.cpp \
+Simulation/CMakeFiles/Simulation.dir/Cannon.cpp.o: \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Cannon.cpp \
  /usr/include/stdc-predef.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/PlayerController.h \
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Cannon.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Common/Common.h \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -451,5 +451,4 @@ Simulation/CMakeFiles/Simulation.dir/PlayerController.cpp.o: \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/Parameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/EnumParameter.h \
  /home/accts/zas8/Documents/temp/PositionBasedDynamics/Demos/GenericParameters/include/VectorParameter.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Thrusters.h \
- /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/Cannon.h
+ /home/accts/zas8/Documents/temp/PositionBasedDynamics/Simulation/RigidBody.h

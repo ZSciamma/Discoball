@@ -1,7 +1,6 @@
 #ifndef __PLAYER_CONTROLLER__
 #define __PLAYER_CONTROLLER__
 
-//#include "Simulation/BulletShooter.h"
 #include "Common/Common.h"
 #include "SimulationModel.h"
 
@@ -38,19 +37,12 @@ class PlayerController {
 
         // GL callbacks
         static bool mousePressed(int button, int action, int mods);
-        //static bool keyPressed(int key, int scancode, int action, int mod);
 
         static void setMousePosFunc(MousePosFct func) {mousePosFunc = func;}
         static void setWorldToScreenFunc(WorldToScreenFct func) {worldToScreenFunc = func;}
         
         // Called by the physics (TimeStepController) when it's ready for the recoil
         void applyRecoil(SimulationModel &model);
-        // void shootBullet(SimulationModel &model);
 };
 
 #endif
-
-
-
-
-        

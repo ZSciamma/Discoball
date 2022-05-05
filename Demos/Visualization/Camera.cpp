@@ -47,13 +47,9 @@ void Camera::update() {
     if (isFirstUpdate) {
         m_xMoveDir = ((m_oldPlayerScreenPosX - (double) m_screenW/2) > 0) * 2 - 1;
         m_yMoveDir = ((-m_oldPlayerScreenPosY + (double) m_screenH/2) > 0) * 2 - 1;
-        //cout << "Start screen pos: " << m_oldPlayerScreenPosX << ", " << m_oldPlayerScreenPosY << endl;
-        //cout << "Start move dir: " << m_xMoveDir << ", " << m_yMoveDir << endl;
         isFirstUpdate = false;
         return;
     }
-
-    //cout << "Character moved " << xDisp << ", " << yDisp << " in screen coords" << endl;
 
     // Check if we should stop or start moving
     if (m_currentlyMoving) {
@@ -70,9 +66,6 @@ void Camera::update() {
             m_currentlyMoving = true;
         }
     }
-
-    //if (!m_currentlyMoving)
-    //    return;
     
     // Move camera
     // Check how far player is from center of screen
@@ -81,9 +74,6 @@ void Camera::update() {
 
     double screenMoveX = distX;
     double screenMoveY = distY;
-
-    //cout << "Player position: " << playerScreenPosX << ", " << playerScreenPosY << endl;
-    //cout << "Planned move: " << screenMoveX << ", " << screenMoveY << endl;
 
     double screenToWorldFact = 100;
     double worldMoveX = screenMoveX / screenToWorldFact;
@@ -99,7 +89,6 @@ void Camera::update() {
     // If it's more than 6.5 away, we cap it at 1
     double magnitude;
     if (toMove <= 1.5) {
-        //cout << "Too small for any movement" << endl << endl;
         return;
     } else if (toMove >= 4.5) {
         magnitude = 1;
@@ -111,41 +100,8 @@ void Camera::update() {
     worldMoveX *= moveFract;
     worldMoveY *= moveFract;
 
-    //cout << "Movement: " << -worldMoveX << ", " << -worldMoveY << endl << endl;
-
     // Kind of a hack because we know the camera is always on the x/y plane. If
     //  it weren't, we'd have to do some conversion to world coordnates using
     //  the eye position or something.
     MiniGL::move(-worldMoveX, -worldMoveY, 0.0);
 }
-
-
-
-   /*
-    // Project camera movement vector to world coordinates
-    Vector3r worldMove = Vector3r(0, 0, 0);
-    cout << "Planned move: " << screenMoveX << ", " << screenMoveY << endl;
-    MiniGL::unproject(screenMoveX, screenMoveY, worldMove);
-    double toMove = worldMove.norm();
-    if (toMove > maxMoveDist) {
-        // Restrict magnitude of camera movement this fram
-        worldMove *= maxMoveDist / toMove;
-    }
-    cout << "Camera moving: " << worldMove.x() << ", " << worldMove.y() << ", " << worldMove.z() << endl << endl;
-
-    // 
-    double eyeX, eyeY, eyeZ;
-    MiniGL::getEyePoint(eyeX, eyeY, eyeZ);
-    cout << "Eye Pos: " << eyeX << ", " << eyeY << ", " << eyeZ << endl;
-
-
-    cout << "Camera moving: " << worldMove.x() << ", " << worldMove.y() << ", " << worldMove.z() << endl << endl;
-    //MiniGL::move(worldMove.x(), worldMove.y(), worldMove.z());
-    //MiniGL::move(0.1, 0.1, 0.1);
-    */
-
-    // If either x or y is contrary to the direction we were going, stop moving
-    // If moving, check how far we need to move
-        // If player is very close, follow player along
-        // If distance to player is too big, just cover a certain fraction of it (such that speed will look good)
-
