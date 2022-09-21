@@ -1,7 +1,21 @@
-# Soft-Body Platformer
-This project was my senior thesis at Yale, advised by Professor Theodore Kim. I built it in Spring 2022 towards completion of my B.S. in Computer Science. This repository contains my project code, and the final thesis can be found [here](/Senior_Thesis.pdf)
+# How to Make a 2D Soft-Body Platformer with Position Based Dynamics
+This project was my senior thesis at Yale, advised by Professor Theodore Kim. I built it in Spring 2022 towards completion of my B.S. in Computer Science. This repository contains my project code, which is a supplement to my [thesis](/Senior%20Thesis.pdf).
 
+In this project, I built a video game engine and a demo game level on top of a state-of-the-art physics engine, Jan Bender's [PositionBasedDynamics](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics). This is a fantastic physics library which uses the technique of  Position Based Dynamics technique to a simulate a large range of phenomena including rigid bodies and soft bodies. The advantage of this method is that provides accuracy _and_ interactivity, which is ideal for physics-based games. Unfortunately, like many complex research techniques, the library is difficult to understand: so this project provides the first guide to make PBD accessible to hobbyist developers.
 
+Here is the demo game level I made using my engine:
+
+[<img width="644" alt="Demo Game Level" src="https://user-images.githubusercontent.com/17149360/191396096-8a910d95-e692-4dac-8ce5-f18ffc291659.png">](https://www.youtube.com/watch?v=Djj6FgJyC9E&ab_channel=ZacS)
+
+## Abstract
+
+The hobbyist game developer community has often pushed the limits of platform games. One popular feature in these games is soft-body dynamics, since it adds interest and greatly extends the range of possible motion. The PositionBasedDynamics library provides a fast and accurate implementation of soft bodies, along with several other physically-based features, but there are currently few guides to help amateur developers learn to use it. In this paper, we describe a method for building a game engine by making small, modular extensions to the PositionBasedDynamics library. 
+
+Beyond demonstrating how to build the engine, the aim of the paper is to show that this existing soft-body implementation can be used to make fun platformers. The result is a simple, enjoyable physics puzzle game level which uses deformable objects to present interesting challenges to the player. The hobbyist game developer community has always used the tools available to them to make an incredible range of wonderfully innovative games --- with this paper, we aim to make one more tool accessible to them.
+
+## Citations
+
+This project is primarily an extension of Jan Bender's [PositionBasedDynamics](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics). For a list of citations, see the [thesis](/Senior%20Thesis.pdf)
 
 ## Acknowledgements
 
