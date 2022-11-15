@@ -19,4 +19,4 @@ This project is primarily an extension of Jan Bender's [PositionBasedDynamics](h
 
 ## Acknowledgements
 
-Special thanks to my Professor K. for advising me and giving me invaluable thanks throughout. Many thanks also to [Professor Jan Bender](https://animation.rwth-aachen.de/person/1/), who built the amazing [PositionBasedDynamics library](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics) – the core of this project – and kindly answered my questions during development.
+Special thanks to Professor K. for advising me and giving me invaluable thanks throughout. Many thanks also to [Professor Jan Bender](https://animation.rwth-aachen.de/person/1/), who built the amazing [PositionBasedDynamics library](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics) – the core of this project – and kindly answered my questions during development.
