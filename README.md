@@ -1,5 +1,5 @@
 # How to Make a 2D Soft-Body Platformer with Position Based Dynamics
-This project was my senior thesis at Yale, advised by Professor Theodore Kim. I built it in Spring 2022 towards completion of my B.S. in Computer Science. This repository contains my project code, which is a supplement to my [thesis](/Senior%20Thesis.pdf).
+This project was my senior thesis at Yale. I built it in Spring 2022 towards completion of my B.S. in Computer Science. This repository contains my project code, which is a supplement to my [thesis](/Senior%20Thesis.pdf).
 
 For this project, I wanted to make a video game that included soft-body dynamics – squishy objects. So, I built a video game engine and a demo game level on top of a state-of-the-art physics engine, Jan Bender's [PositionBasedDynamics](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics). This is a fantastic physics library which uses the Position Based Dynamics technique to a simulate a large range of phenomena, including rigid bodies and soft bodies. The advantage of this method is that provides accuracy _and_ interactivity, which is ideal for physics-based puzzle games, for example. Like many complex research techniques, the library is difficult to understand: so this project provides the first guide to using it, in order to make PBD accessible to all hobbyist C++ developers.
 
@@ -19,4 +19,4 @@ This project is primarily an extension of Jan Bender's [PositionBasedDynamics](h
 
 ## Acknowledgements
 
-Special thanks to [Professor Theodore Kim](https://www.tkim.graphics/) for advising me and giving me invaluable thanks throughout. Many thanks also to [Professor Jan Bender](https://animation.rwth-aachen.de/person/1/), who built the amazing [PositionBasedDynamics library](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics) – the core of this project – and kindly answered my questions during development.
+Special thanks to my Professor K. for advising me and giving me invaluable thanks throughout. Many thanks also to [Professor Jan Bender](https://animation.rwth-aachen.de/person/1/), who built the amazing [PositionBasedDynamics library](https://github.com/InteractiveComputerGraphics/PositionBasedDynamics) – the core of this project – and kindly answered my questions during development.
